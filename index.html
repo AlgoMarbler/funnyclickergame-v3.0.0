@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Clicker Game 3</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Futura, sans-serif;
+        }
+
+        body {
+            padding-top: 0vh;
+            margin: 0;
+        }
+
+        #top-panel {
+            width: 100vw;
+            height: 2vh;
+            background-color: #E0E7EE;
+            text-align: center;
+            padding-top: 1vh;
+            padding-bottom: 1vh;
+            font-size: 2vh;
+            overflow: hidden;
+        }
+
+        #left-panel {
+            width: 28vw;
+            padding-left: 1vw;
+            padding-right: 1vw;
+            padding-top: 1vh;
+            height: 89vh;
+            background-color: #FCFCFC;
+            float: left;
+            text-align: center;
+        }
+
+        #content-panel {
+            width: 40vw;
+            height: 90vh;
+            background-color: #FAFAFA;
+            float: left;
+            text-align: center;
+        }
+
+        #right-panel {
+            width: 24vw;
+            height: 89vh;
+            padding-top: 1vh;
+            padding-left: 3vw;
+            padding-right: 3vw;
+            background-color: #FCFCFC;
+            float: left;
+            text-align: left;
+        }
+
+        #floor-panel {
+            width: 100vw;
+            height: 6vh;
+            background-color: #090935;
+            float: left;
+            text-align: center;
+        }
+
+        #upgrade-panel {
+            min-height: 13vh;
+            height: 13vh;
+            background-color: #DDDDDD;
+            width: 25vw;
+            padding-left: 1.5vw;
+            padding-right: 1.5vw;
+            padding-top: 0.5vw;
+            border-radius: 1vh;
+            color: #000000;
+            overflow: auto;
+            text-align: left;
+            transition: height 0.2s ease-in-out;
+        }
+
+        #fop-panel {
+            min-height: 13vh;
+            height: 13vh;
+            background-color: #DDDDDD;
+            width: 25vw;
+            padding-left: 1.5vw;
+            padding-right: 1.5vw;
+            padding-top: 0.5vw;
+            border-radius: 1vh;
+            color: #000000;
+            overflow: auto;
+            text-align: left;
+            transition: height 0.2s ease-in-out;
+        }
+
+/*        Animations*/
+
+        .flash {
+            animation: flash 0.5s;
+        }
+
+        .notEnoughCoins {
+            animation: notEnoughCoins 0.5s;
+        }
+
+        @keyframes notEnoughCoins{
+            100% {
+                color: #FFFFFF;
+            }
+            0%, 25% {
+                color: #FF0000;
+            }
+        }
+
+        @keyframes flash {
+            100% {
+                background-color: #4CAF50;
+            }
+            0%, 25% {
+                background-color: #FF0000;
+            }
+        }
+
+        #upgrade-panel:hover {
+            height: 86vh;
+        }
+
+        #fop-panel:hover {
+            height: 70vh;
+        }        
+
+        /* Customize the scrollbar for WebKit browsers */
+        #upgrade-panel::-webkit-scrollbar {
+            width: 0vw;
+        }
+
+        #fop-panel::-webkit-scrollbar {
+            width: 0vw;
+        }
+
+        #upgrade-panel::-webkit-scrollbar-thumb {
+            background-color: #E2E2E2;
+            border-radius: 1vh;
+        }
+
+        #fop-panel::-webkit-scrollbar-thumb {
+            background-color: #E2E2E2;
+            border-radius: 1vh;
+        }
+
+        #upgrade-panel::-webkit-scrollbar-track {
+            background-color: #D0D0D0;
+        }
+
+        #fop-panel::-webkit-scrollbar-track {
+            background-color: #D0D0D0;
+        }
+
+        #number-showing {
+            width: 40vw;
+            background-color: #000000;
+            color: #FFFFFF;
+            height: 15vh;
+        }
+
+        #gold-showing {
+            width: 40vw;
+            text-align: center;
+            height: 9vh;
+            padding-top: 0.5vh;
+            padding-bottom: 0.5vh;
+            font-size: 9vh;
+        }
+
+        #gpc-showing {
+            width: 40vw;
+            text-align: center;
+            height: 4vh;
+            padding-top: 0vh;
+            padding-bottom: 1vh;
+            font-size: 4vh;
+        }
+
+        #main-clicker {
+            width: 40vw;
+            background-image: url("gold.png");
+            height: 75vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-color: rgba(0,0,0,0);
+        }
+
+        /* Add a class to your button for styling */
+        .hover-grow {
+          transition: transform 0.1s ease-in-out;
+          font-family: Lora, serif;
+        }
+
+        /* Define the hover effect */
+        .hover-grow:hover {
+          /* Scale the button by 10% on hover */
+          transform: scale(1.05);
+        }
+
+    </style>
+    <script type="text/javascript">
+
+        var gold = 0;
+        var lifetimeGold = 0;
+        var gpc = 1;
+        var upgrades1 = false;
+        var upgradeAmount = 0;
+
+        var landMulti = 1;
+        var capitalMulti = 1;
+        var enterpriseMulti = 1;
+        var minerMulti = 1;
+        var minerBonus = 1;
+
+        var fop1quantity = 0;
+        var fop1cost = 100;
+
+        var fop1defaultProduction = 1;
+        var fop1production = 1;
+
+        // For Button 2
+        var fop2quantity = 0;
+        var fop2cost = 200;
+        var fop2defaultProduction = 2;
+        var fop2production = 2;
+
+        // For Button 3
+        var fop3quantity = 0;
+        var fop3cost = 300;
+        var fop3defaultProduction = 3;
+        var fop3production = 3;
+
+        // For Button 4
+        var fop4quantity = 0;
+        var fop4cost = 400;
+        var fop4defaultProduction = 4;
+        var fop4production = 4;
+
+        // For Button 5
+        var fop5quantity = 0;
+        var fop5cost = 500;
+        var fop5defaultProduction = 5;
+        var fop5production = 5;
+
+        // For Button 6
+        var fop6quantity = 0;
+        var fop6cost = 600;
+        var fop6defaultProduction = 6;
+        var fop6production = 6;
+
+        // For Button 7
+        var fop7quantity = 0;
+        var fop7cost = 700;
+        var fop7defaultProduction = 7;
+        var fop7production = 7;
+
+        // For Button 8
+        var fop8quantity = 0;
+        var fop8cost = 800;
+        var fop8defaultProduction = 8;
+        var fop8production = 8;
+
+        // For Button 9
+        var fop9quantity = 0;
+        var fop9cost = 900;
+        var fop9defaultProduction = 9;
+        var fop9production = 9;
+
+        // For Button 10
+        var fop10quantity = 0;
+        var fop10cost = 1000;
+        var fop10defaultProduction = 10;
+        var fop10production = 10;
+
+        // For Button 11
+        var fop11quantity = 0;
+        var fop11cost = 1100;
+        var fop11defaultProduction = 11;
+        var fop11production = 11;
+
+        // For Button 12
+        var fop12quantity = 0;
+        var fop12cost = 1200;
+        var fop12defaultProduction = 12;
+        var fop12production = 12;
+
+        // For Button 13
+        var fop13quantity = 0;
+        var fop13cost = 1300;
+        var fop13defaultProduction = 13;
+        var fop13production = 13;
+
+        // For Button 14
+        var fop14quantity = 0;
+        var fop14cost = 1400;
+        var fop14defaultProduction = 14;
+        var fop14production = 14;
+
+        // For Button 15
+        var fop15quantity = 0;
+        var fop15cost = 1500;
+        var fop15defaultProduction = 15;
+        var fop15production = 15;
+
+        // For Button 16
+        var fop16quantity = 0;
+        var fop16cost = 1600;
+        var fop16defaultProduction = 16;
+        var fop16production = 16;
+
+        // For Button 17
+        var fop17quantity = 0;
+        var fop17cost = 1700;
+        var fop17defaultProduction = 17;
+        var fop17production = 17;
+
+        // For Button 18
+        var fop18quantity = 0;
+        var fop18cost = 1800;
+        var fop18defaultProduction = 18;
+        var fop18production = 18;
+
+        // For Button 19
+        var fop19quantity = 0;
+        var fop19cost = 1900;
+        var fop19defaultProduction = 19;
+        var fop19production = 19;
+
+        // For Button 20
+        var fop20quantity = 0;
+        var fop20cost = 2000;
+        var fop20defaultProduction = 20;
+        var fop20production = 20;
+
+        // For Button 21
+        var fop21quantity = 0;
+        var fop21cost = 2100;
+        var fop21defaultProduction = 21;
+        var fop21production = 21;
+
+        // For Button 22
+        var fop22quantity = 0;
+        var fop22cost = 2200;
+        var fop22defaultProduction = 22;
+        var fop22production = 22;
+
+        // For Button 23
+        var fop23quantity = 0;
+        var fop23cost = 2300;
+        var fop23defaultProduction = 23;
+        var fop23production = 23;
+
+        // For Button 24
+        var fop24quantity = 0;
+        var fop24cost = 2400;
+        var fop24defaultProduction = 24;
+        var fop24production = 24;
+
+        // For Button 25
+        var fop25quantity = 0;
+        var fop25cost = 2500;
+        var fop25defaultProduction = 25;
+        var fop25production = 25;
+
+
+        function styleNumber(number) {
+            if (number >= 1e63) {
+                return number.toExponential(3);
+            } else if (number >= 1e60) {
+                return (number / 1e60).toFixed(3) + ' novemdecillion';
+            } else if (number >= 1e57) {
+                return (number / 1e57).toFixed(3) + ' octodecillion';
+            } else if (number >= 1e54) {
+                return (number / 1e54).toFixed(3) + ' septendecillion';
+            } else if (number >= 1e51) {
+                return (number / 1e51).toFixed(3) + ' sexdecillion';
+            } else if (number >= 1e48) {
+                return (number / 1e48).toFixed(3) + ' quindecillion';
+            } else if (number >= 1e45) {
+                return (number / 1e45).toFixed(3) + ' quattuordecillion';
+            } else if (number >= 1e42) {
+                return (number / 1e42).toFixed(3) + ' tredecillion';
+            } else if (number >= 1e39) {
+                return (number / 1e39).toFixed(3) + ' duodecillion';
+            } else if (number >= 1e36) {
+                return (number / 1e36).toFixed(3) + ' undecillion';
+            } else if (number >= 1e33) {
+                return (number / 1e33).toFixed(3) + ' decillion';
+            } else if (number >= 1e30) {
+                return (number / 1e30).toFixed(3) + ' nonillion';
+            } else if (number >= 1e27) {
+                return (number / 1e27).toFixed(3) + ' octillion';
+            } else if (number >= 1e24) {
+                return (number / 1e24).toFixed(3) + ' septillion';
+            } else if (number >= 1e21) {
+                return (number / 1e21).toFixed(3) + ' sextillion';
+            } else if (number >= 1e18) {
+                return (number / 1e18).toFixed(3) + ' quintillion';
+            } else if (number >= 1e15) {
+                return (number / 1e15).toFixed(3) + ' quadrillion';
+            } else if (number >= 1e12) {
+                return (number / 1e12).toFixed(3) + ' trillion';
+            } else if (number >= 1e9) {
+                return (number / 1e9).toFixed(3) + ' billion';
+            } else if (number >= 1e6) {
+                return (number / 1e6).toFixed(3) + ' million';
+            } else {
+                return Math.round(number);
+            }
+        }
+
+        function update() {
+            console.log("Function is running!");
+            updateData();
+        }
+
+        // Set up the interval to run the function every 0.25 seconds
+        setInterval(update, 200);
+
+        function mainClick() {
+            gold = gold + gpc;
+            lifetimeGold = lifetimeGold + gpc;
+            updateData();
+        }
+
+        function updateCoinDisplay() {
+            document.getElementById('gold-showing').innerHTML = styleNumber(gold) + ' gold';
+            document.getElementById('gpc-showing').innerHTML = 'Per click: ' + styleNumber(gpc);
+        }
+
+        function updateStatsBoard() {
+            document.getElementById('stats-board-current-gold').innerHTML = 'Current Gold Balance: <b>' + styleNumber(gold) + '</b>'
+            document.getElementById('stats-board-lifetime-gold').innerHTML = 'Total Gold Produced: <b>' + styleNumber(lifetimeGold) + '</b>';
+            document.getElementById('stats-board-lost-gold').innerHTML = 'Total Gold Lost: <b>' + styleNumber(lifetimeGold - gold) + '</b>';
+
+            document.getElementById('stats-board-raw-gpc').innerHTML = 'Raw Gold Per Click: <b>' + styleNumber(fop1quantity * fop1defaultProduction + fop2quantity * fop2defaultProduction + fop3quantity * fop3defaultProduction + fop4quantity * fop4defaultProduction + fop5quantity * fop5defaultProduction + fop6quantity * fop6defaultProduction + fop7quantity * fop7defaultProduction + fop8quantity * fop8defaultProduction + fop9quantity * fop9defaultProduction + fop10quantity * fop10defaultProduction + fop11quantity * fop11defaultProduction + fop12quantity * fop12defaultProduction + fop13quantity * fop13defaultProduction + fop14quantity * fop14defaultProduction + fop15quantity * fop15defaultProduction + fop16quantity * fop16defaultProduction + fop17quantity * fop17defaultProduction + fop18quantity * fop18defaultProduction + fop19quantity * fop19defaultProduction + fop20quantity * fop20defaultProduction + fop21quantity * fop21defaultProduction + fop22quantity * fop22defaultProduction + fop23quantity * fop23defaultProduction + fop24quantity * fop24defaultProduction + fop25quantity * fop25defaultProduction) + '</b>';
+            document.getElementById('stats-board-gpc-multi').innerHTML = 'Gold Per Click Multiplier: <b>' + styleNumber((gpc-1)/(fop1quantity * fop1defaultProduction + fop2quantity * fop2defaultProduction + fop3quantity * fop3defaultProduction + fop4quantity * fop4defaultProduction + fop5quantity * fop5defaultProduction + fop6quantity * fop6defaultProduction + fop7quantity * fop7defaultProduction + fop8quantity * fop8defaultProduction + fop9quantity * fop9defaultProduction + fop10quantity * fop10defaultProduction + fop11quantity * fop11defaultProduction + fop12quantity * fop12defaultProduction + fop13quantity * fop13defaultProduction + fop14quantity * fop14defaultProduction + fop15quantity * fop15defaultProduction + fop16quantity * fop16defaultProduction + fop17quantity * fop17defaultProduction + fop18quantity * fop18defaultProduction + fop19quantity * fop19defaultProduction + fop20quantity * fop20defaultProduction + fop21quantity * fop21defaultProduction + fop22quantity * fop22defaultProduction + fop23quantity * fop23defaultProduction + fop24quantity * fop24defaultProduction + fop25quantity * fop25defaultProduction)*100) + '%</b>';
+            document.getElementById('stats-board-total-fops').innerHTML = 'Total Factors of Production: <b>' + styleNumber(fop1quantity + fop2quantity + fop3quantity + fop4quantity + fop5quantity +fop6quantity + fop7quantity + fop8quantity + fop9quantity + fop10quantity +fop11quantity + fop12quantity + fop13quantity + fop14quantity + fop15quantity +fop16quantity + fop17quantity + fop18quantity + fop19quantity + fop20quantity + fop21quantity + fop22quantity + fop23quantity + fop24quantity + fop25quantity) + '</b>'
+ 
+
+        }
+
+        function checkForUpgrades() {
+            if (lifetimeGold >= 1000000 && !upgrades1) {
+                document.getElementById("upgrade-panel").innerHTML +=
+                    '<div id="upgradenumberindex1" style="height: 9vh;">' +
+                        '<div style="font-size: 2.5vh; height: 3vh; text-align: left; padding-left: 1.5vw; width: 23.5vw; background-image: url(\'upgrade-typical.png\'); background-size: cover; background-repeat: no-repeat; border-radius: 1vh 1vh 0 0;"><b>Clicky Boosty I </b></div>' +
+                        '<div style="height: 6vh; background-color: #999999; border-radius: 0 0 1vh 1vh;">' +
+                            '<div style="height: 3vh; padding-left: 1vw; font-size: 1.5vh;">Gold per click +1%</div>' +
+                            '<div style="height: 3vh; text-align: center;">' +
+                                '<button onClick="upgradeTypical(1e+6, 1.01, 1)" style="width: 23.5vw; font-size: 1.5vh; height: 2.5vh; border: 0px; border-radius: 0.5vh;">Buy (1 million gold)</button>' +
+                            '</div>' +
+                        '</div>' + 
+                    '</div><div style="border-radius: 0px; height: 1.5vh; width: 0vw;"></div>';
+                upgradeAmount++;
+                upgrades1 = true;
+            }
+        }
+
+        function updateUpgradeAmount() {
+            document.getElementById('upgradeAmount').innerHTML = "UPGRADES (" + upgradeAmount + " available)"
+        }
+
+        function updateIncrement() {
+            gpc = 1 + fop1quantity * fop1production * minerMulti + fop2quantity * fop2production * capitalMulti * minerBonus + fop3quantity * fop3production * landMulti * minerBonus + fop4quantity * fop4production * capitalMulti  * minerBonus + fop5quantity * fop5production * capitalMulti * minerBonus + fop6quantity * fop6production * enterpriseMulti * minerBonus + fop7quantity * fop7production * capitalMulti * minerBonus + fop8quantity * fop8production * landMulti * minerBonus + fop9quantity * fop9production * enterpriseMulti * minerBonus + fop10quantity * fop10production * landMulti * minerBonus + fop11quantity * fop11production * landMulti * minerBonus + fop12quantity * fop12production * capitalMulti * minerBonus + fop13quantity * fop13production * landMulti * minerBonus + fop14quantity * fop14production * capitalMulti * minerBonus + fop15quantity * fop15production * enterpriseMulti * minerBonus + fop16quantity * fop16production * capitalMulti * minerBonus + fop17quantity * fop17production * landMulti * minerBonus + fop18quantity * fop18production* enterpriseMulti * minerBonus + fop19quantity * fop19production * capitalMulti * minerBonus + fop20quantity * fop20production * capitalMulti * minerBonus + fop21quantity * fop21production * landMulti * minerBonus + fop22quantity * fop22production * landMulti * minerBonus + fop23quantity * fop23production * capitalMulti * minerBonus + fop24quantity * fop24production * enterpriseMulti * minerBonus + fop25quantity * fop25production * enterpriseMulti * minerBonus;
+        }
+
+        function updateData() {
+            updateCoinDisplay();
+            checkForUpgrades();
+            updateUpgradeAmount();
+            updateStatsBoard();
+            updateFOPVariablesDisplay();
+            updateIncrement();
+        }
+
+        function updateFOPVariablesDisplay() {
+            // For Button 1
+            document.getElementById('fop1-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop1cost) + '</b> gold';
+            document.getElementById('fop1-quantity-display').innerHTML = fop1quantity;
+
+            // For Button 2
+            document.getElementById('fop2-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop2cost) + '</b> gold';
+            document.getElementById('fop2-quantity-display').innerHTML = fop2quantity;
+
+            // For Button 3
+            document.getElementById('fop3-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop3cost) + '</b> gold';
+            document.getElementById('fop3-quantity-display').innerHTML = fop3quantity;
+
+            // For Button 4
+            document.getElementById('fop4-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop4cost) + '</b> gold';
+            document.getElementById('fop4-quantity-display').innerHTML = fop4quantity;
+
+            // For Button 5
+            document.getElementById('fop5-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop5cost) + '</b> gold';
+            document.getElementById('fop5-quantity-display').innerHTML = fop5quantity;
+
+            // For Button 6
+            document.getElementById('fop6-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop6cost) + '</b> gold';
+            document.getElementById('fop6-quantity-display').innerHTML = fop6quantity;
+
+            // For Button 7
+            document.getElementById('fop7-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop7cost) + '</b> gold';
+            document.getElementById('fop7-quantity-display').innerHTML = fop7quantity;
+
+            // For Button 8
+            document.getElementById('fop8-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop8cost) + '</b> gold';
+            document.getElementById('fop8-quantity-display').innerHTML = fop8quantity;
+
+            // For Button 9
+            document.getElementById('fop9-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop9cost) + '</b> gold';
+            document.getElementById('fop9-quantity-display').innerHTML = fop9quantity;
+
+            // For Button 10
+            document.getElementById('fop10-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop10cost) + '</b> gold';
+            document.getElementById('fop10-quantity-display').innerHTML = fop10quantity;
+
+            // For Button 11
+            document.getElementById('fop11-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop11cost) + '</b> gold';
+            document.getElementById('fop11-quantity-display').innerHTML = fop11quantity;
+
+            // For Button 12
+            document.getElementById('fop12-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop12cost) + '</b> gold';
+            document.getElementById('fop12-quantity-display').innerHTML = fop12quantity;
+
+            // For Button 13
+            document.getElementById('fop13-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop13cost) + '</b> gold';
+            document.getElementById('fop13-quantity-display').innerHTML = fop13quantity;
+
+            // For Button 14
+            document.getElementById('fop14-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop14cost) + '</b> gold';
+            document.getElementById('fop14-quantity-display').innerHTML = fop14quantity;
+
+            // For Button 15
+            document.getElementById('fop15-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop15cost) + '</b> gold';
+            document.getElementById('fop15-quantity-display').innerHTML = fop15quantity;
+
+            // For Button 16
+            document.getElementById('fop16-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop16cost) + '</b> gold';
+            document.getElementById('fop16-quantity-display').innerHTML = fop16quantity;
+
+            // For Button 17
+            document.getElementById('fop17-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop17cost) + '</b> gold';
+            document.getElementById('fop17-quantity-display').innerHTML = fop17quantity;
+
+            // For Button 18
+            document.getElementById('fop18-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop18cost) + '</b> gold';
+            document.getElementById('fop18-quantity-display').innerHTML = fop18quantity;
+
+            // For Button 19
+            document.getElementById('fop19-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop19cost) + '</b> gold';
+            document.getElementById('fop19-quantity-display').innerHTML = fop19quantity;
+
+            // For Button 20
+            document.getElementById('fop20-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop20cost) + '</b> gold';
+            document.getElementById('fop20-quantity-display').innerHTML = fop20quantity;
+
+            // For Button 21
+            document.getElementById('fop21-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop21cost) + '</b> gold';
+            document.getElementById('fop21-quantity-display').innerHTML = fop21quantity;
+
+            // For Button 22
+            document.getElementById('fop22-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop22cost) + '</b> gold';
+            document.getElementById('fop22-quantity-display').innerHTML = fop22quantity;
+
+            // For Button 23
+            document.getElementById('fop23-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop23cost) + '</b> gold';
+            document.getElementById('fop23-quantity-display').innerHTML = fop23quantity;
+
+            // For Button 24
+            document.getElementById('fop24-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop24cost) + '</b> gold';
+            document.getElementById('fop24-quantity-display').innerHTML = fop24quantity;
+
+            // For Button 25
+            document.getElementById('fop25-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop25cost) + '</b> gold';
+            document.getElementById('fop25-quantity-display').innerHTML = fop25quantity;
+
+        }
+
+        function upgradeTypical(cost, multiplier, indexupgrade) {
+            // Check if the player has enough gold to purchase the upgrade
+            if (gold >= cost) {
+                // Deduct the cost from the current gold
+                gold -= cost;
+                upgradeAmount--;
+
+                // Apply the upgrade
+                landMulti *= multiplier;
+                capitalMulti *= multiplier;
+                enterpriseMulti *= multiplier;
+                minerMulti *= multiplier;
+
+                // Update the display
+                updateData();
+
+                // Remove the specific upgrade div from the upgrade panel
+                var upgradePanel = document.getElementById("upgrade-panel");
+                var upgradeContent = upgradePanel.innerHTML;
+
+                // Find the starting and ending indices of the upgrade to be removed
+                var start = upgradeContent.indexOf('<div id="upgradenumberindex'+ indexupgrade + '" style="height: 9vh;">');
+                var end = upgradeContent.indexOf('</div><div style="border-radius: 0px; height: 1.5vh; width: 0vw;"></div>');
+
+                // Check if the starting and ending indices are valid before removing
+                if (start !== -1 && end !== -1) {
+                    upgradePanel.innerHTML = upgradeContent.substring(0, start) + upgradeContent.substring(end);
+                }
+
+                // Check for other upgrades
+                checkForUpgrades();
+            } else {
+                flashNotEnoughCoins();
+            }
+        }
+
+        function flashNotEnoughCoins() {
+            document.getElementById("gold-showing").classList.add("notEnoughCoins");
+
+            // Remove the flash class after 500ms
+            setTimeout(function () {
+            document.getElementById("gold-showing").classList.remove("notEnoughCoins");
+            }, 500);
+            updateData();
+        }
+
+        function buyFOP1(cost) {
+            if(gold >= cost) {
+                gold -= cost;
+                fop1cost *= 1.2;
+                fop1quantity += 1;
+                updateFOPVariablesDisplay();
+
+            }else{
+                flashNotEnoughCoins();
+            };
+
+            updateData();
+        }
+
+        // Function for Button 2
+        function buyFOP2(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop2cost *= 1.2;
+                fop2quantity += 1;
+                updateFOP2VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 3
+        function buyFOP3(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop3cost *= 1.2;
+                fop3quantity += 1;
+                updateFOP3VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 4
+        function buyFOP4(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop4cost *= 1.2;
+                fop4quantity += 1;
+                updateFOP4VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 5
+        function buyFOP5(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop5cost *= 1.2;
+                fop5quantity += 1;
+                updateFOP5VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 6
+        function buyFOP6(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop6cost *= 1.2;
+                fop6quantity += 1;
+                updateFOP6VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 7
+        function buyFOP7(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop7cost *= 1.2;
+                fop7quantity += 1;
+                updateFOP7VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 8
+        function buyFOP8(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop8cost *= 1.2;
+                fop8quantity += 1;
+                updateFOP8VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 9
+        function buyFOP9(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop9cost *= 1.2;
+                fop9quantity += 1;
+                updateFOP9VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 10
+        function buyFOP10(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop10cost *= 1.2;
+                fop10quantity += 1;
+                updateFOP10VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 11
+        function buyFOP11(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop11cost *= 1.2;
+                fop11quantity += 1;
+                updateFOP11VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 12
+        function buyFOP12(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop12cost *= 1.2;
+                fop12quantity += 1;
+                updateFOP12VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 13
+        function buyFOP13(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop13cost *= 1.2;
+                fop13quantity += 1;
+                updateFOP13VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 14
+        function buyFOP14(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop14cost *= 1.2;
+                fop14quantity += 1;
+                updateFOP14VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 15
+        function buyFOP15(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop15cost *= 1.2;
+                fop15quantity += 1;
+                updateFOP15VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 16
+        function buyFOP16(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop16cost *= 1.2;
+                fop16quantity += 1;
+                updateFOP16VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 17
+        function buyFOP17(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop17cost *= 1.2;
+                fop17quantity += 1;
+                updateFOP17VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 18
+        function buyFOP18(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop18cost *= 1.2;
+                fop18quantity += 1;
+                updateFOP18VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 19
+        function buyFOP19(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop19cost *= 1.2;
+                fop19quantity += 1;
+                updateFOP19VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 20
+        function buyFOP20(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop20cost *= 1.2;
+                fop20quantity += 1;
+                updateFOP20VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 21
+        function buyFOP21(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop21cost *= 1.2;
+                fop21quantity += 1;
+                updateFOP21VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 22
+        function buyFOP22(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop22cost *= 1.2;
+                fop22quantity += 1;
+                updateFOP22VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 23
+        function buyFOP23(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop23cost *= 1.2;
+                fop23quantity += 1;
+                updateFOP23VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 24
+        function buyFOP24(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop24cost *= 1.2;
+                fop24quantity += 1;
+                updateFOP24VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+        // Function for Button 25
+        function buyFOP25(cost) {
+            if (gold >= cost) {
+                gold -= cost;
+                fop25cost *= 1.2;
+                fop25quantity += 1;
+                updateFOP25VariablesDisplay();
+            } else {
+                flashNotEnoughCoins();
+            }
+
+            updateData();
+        }
+
+    </script>
+</head>
+<body>
+    <div id="top-panel">
+        Made with <b><i>love</i></b> by <a href="https://youtube.com/c/AlgoMarblerYT">AlgoMarbler</a>‎ • You are currently playing <b>v3.0.0</b> • Next update will be out 18/5/2024.
+    </div>
+    <div id="left-panel">
+        <div id="upgrade-panel">
+            <div id="upgradeAmount" style="height: 2vh; font-size: 2vh; padding-bottom: 0.5vh;">UPGRADES</div>
+        </div>
+        <div style="height: 2vh;"></div>
+        <div id="fop-panel">
+            <div id="fopAmount" style="height: 2vh; font-size: 2vh; padding-bottom: 0.5vh;">FACTORS OF PRODUCTION</div>
+
+            <!-- Button 1 -->
+
+            <button onclick="buyFOP1(fop1cost);" style="background-image: url('fop1.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop1-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop1-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 2 -->
+            <button onclick="buyFOP2(fop2cost);" style="background-image: url('fop2.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop2-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop2-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 3 -->
+            <button onclick="buyFOP3(fop3cost);" style="background-image: url('fop3.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop3-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop3-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 4 -->
+            <button onclick="buyFOP4(fop4cost);" style="background-image: url('fop4.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop4-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop4-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 5 -->
+            <button onclick="buyFOP5(fop5cost);" style="background-image: url('fop5.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop5-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop5-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 6 -->
+            <button onclick="buyFOP6(fop6cost);" style="background-image: url('fop6.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop6-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop6-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 7 -->
+            <button onclick="buyFOP7(fop7cost);" style="background-image: url('fop7.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop7-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop7-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 8 -->
+            <button onclick="buyFOP8(fop8cost);" style="background-image: url('fop8.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop8-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop8-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 9 -->
+            <button onclick="buyFOP9(fop9cost);" style="background-image: url('fop9.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop9-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop9-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 10 -->
+            <button onclick="buyFOP10(fop10cost);" style="background-image: url('fop10.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop10-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop10-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 11 -->
+            <button onclick="buyFOP11(fop11cost);" style="background-image: url('fop11.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop11-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop11-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 12 -->
+            <button onclick="buyFOP12(fop12cost);" style="background-image: url('fop12.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop12-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop12-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 13 -->
+            <button onclick="buyFOP13(fop13cost);" style="background-image: url('fop13.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop13-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop13-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 14 -->
+            <button onclick="buyFOP14(fop14cost);" style="background-image: url('fop14.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop14-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop14-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 15 -->
+            <button onclick="buyFOP15(fop15cost);" style="background-image: url('fop15.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop15-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop15-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 16 -->
+            <button onclick="buyFOP16(fop16cost);" style="background-image: url('fop16.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop16-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop16-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 17 -->
+            <button onclick="buyFOP17(fop17cost);" style="background-image: url('fop17.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop17-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop17-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 18 -->
+            <button onclick="buyFOP18(fop18cost);" style="background-image: url('fop18.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop18-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop18-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 19 -->
+            <button onclick="buyFOP19(fop19cost);" style="background-image: url('fop19.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop19-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop19-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 20 -->
+            <button onclick="buyFOP20(fop20cost);" style="background-image: url('fop20.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop20-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop20-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 21 -->
+            <button onclick="buyFOP21(fop21cost);" style="background-image: url('fop21.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop21-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop21-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 22 -->
+            <button onclick="buyFOP22(fop22cost);" style="background-image: url('fop22.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop22-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop22-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 23 -->
+            <button onclick="buyFOP23(fop23cost);" style="background-image: url('fop23.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop23-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop23-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 24 -->
+            <button onclick="buyFOP24(fop24cost);" style="background-image: url('fop24.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop24-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop24-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+
+            <!-- Button 25 -->
+            <button onclick="buyFOP25(fop25cost);" style="background-image: url('fop25.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
+                <div style="float: left; width: 5vw; text-align: right; height: 4vw;  font-size: 2.75vw;"></div>
+                <div  style="float: left; width: 11vw; height: 4vw;">
+                    <div style="float: left; width: 11vw; height: 2.5vw"></div>
+                    <div id="fop25-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw;"></div>
+                </div>
+                <div id="fop25-quantity-display" style="float: left; width: 6.125vw; text-align: right; height: 4vw;  font-size: 2.75vw; padding-right: 1vw;"></div>
+            </button>
+        </div>
+    </div>
+    <div id="content-panel">
+        <div id="number-showing">
+            <div id="gold-showing">0</div>
+            <div id="gpc-showing">Per Click: 1</div>
+        </div>
+        <button id="main-clicker" onClick="mainClick()"></button>
+    </div>
+    <div id="right-panel">
+        <div style="height: 5vh; font-size: 3.5vh; text-align: center;">STATISTICS</div>
+        <div id="stats-board-current-gold"></div>
+        <div id="stats-board-lifetime-gold"></div>
+        <div id="stats-board-lost-gold"></div>
+        <br>
+        <div id="stats-board-raw-gpc"></div>
+        <div id="stats-board-gpc-multi"></div>
+        <br>
+        <div id="stats-board-total-fops"></div>
+    </div>
+    <div id="floor-panel">egg</div>
+</body>
+</html>
