@@ -99,6 +99,21 @@
             transition: height 0.2s ease-in-out;
         }
 
+        #stats-panel {
+            min-height: 30vh;
+            height: 30vh;
+            background-color: #DDDDDD;
+            width: 25vw;
+            padding-left: 1.5vw;
+            padding-right: 1.5vw;
+            padding-top: 0.5vw;
+            border-radius: 1vh;
+            color: #000000;
+            overflow: auto;
+            text-align: left;
+            transition: height 0.2s ease-in-out;
+        }
+
 /*        Animations*/
 
         .flash {
@@ -133,7 +148,11 @@
 
         #fop-panel:hover {
             height: 70vh;
-        }        
+        }   
+
+        #stats-panel:hover {
+            height: 37vh;
+        }              
 
         /* Customize the scrollbar for WebKit browsers */
         #upgrade-panel::-webkit-scrollbar {
@@ -141,6 +160,10 @@
         }
 
         #fop-panel::-webkit-scrollbar {
+            width: 0vw;
+        }
+
+        #stats-panel::-webkit-scrollbar {
             width: 0vw;
         }
 
@@ -154,11 +177,20 @@
             border-radius: 1vh;
         }
 
+        #stats-panel::-webkit-scrollbar-thumb {
+            background-color: #E2E2E2;
+            border-radius: 1vh;
+        }
+
         #upgrade-panel::-webkit-scrollbar-track {
             background-color: #D0D0D0;
         }
 
         #fop-panel::-webkit-scrollbar-track {
+            background-color: #D0D0D0;
+        }
+
+        #stats-panel::-webkit-scrollbar-track {
             background-color: #D0D0D0;
         }
 
@@ -1250,6 +1282,18 @@
                 </div>
                 <div id="fop25-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
             </button>
+        </div>
+        <div style="height: 2vh;"></div>
+        <div id="stats-panel">
+            <div style="height: 5vh; font-size: 3.5vh; text-align: center;">STATISTICS</div>
+            <div id="stats-board-current-gold"></div>
+            <div id="stats-board-lifetime-gold"></div>
+            <div id="stats-board-lost-gold"></div>
+            <br>
+            <div id="stats-board-raw-gpc"></div>
+            <div id="stats-board-gpc-multi"></div>
+            <br>
+            <div id="stats-board-total-fops"></div>
         </div>
     </div>
     <div id="content-panel">
