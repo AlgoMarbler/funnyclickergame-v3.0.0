@@ -114,6 +114,21 @@
             transition: height 0.2s ease-in-out;
         }
 
+
+        .hiddenDiv {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: #fff;
+            padding: 1vh;
+            border: 1px solid #aaa;
+            z-index: 999;
+        }
+
+        button:hover .hiddenDiv {
+            display: block;
+        }
+
 /*        Animations*/
 
         .flash {
@@ -264,147 +279,147 @@
 
         // For Button 2
         var fop2quantity = 0;
-        var fop2cost = 200;
-        var fop2defaultProduction = 2;
-        var fop2production = 2;
+        var fop2cost = 750;
+        var fop2defaultProduction = 5;
+        var fop2production = 5;
 
         // For Button 3
         var fop3quantity = 0;
-        var fop3cost = 300;
-        var fop3defaultProduction = 3;
-        var fop3production = 3;
+        var fop3cost = 5750;
+        var fop3defaultProduction = 20;
+        var fop3production = 20;
 
         // For Button 4
         var fop4quantity = 0;
-        var fop4cost = 400;
-        var fop4defaultProduction = 4;
-        var fop4production = 4;
+        var fop4cost = 40000;
+        var fop4defaultProduction = 100;
+        var fop4production = 100;
 
         // For Button 5
         var fop5quantity = 0;
-        var fop5cost = 500;
-        var fop5defaultProduction = 5;
-        var fop5production = 5;
+        var fop5cost = 375000;
+        var fop5defaultProduction = 600;
+        var fop5production = 600;
 
         // For Button 6
         var fop6quantity = 0;
-        var fop6cost = 600;
-        var fop6defaultProduction = 6;
-        var fop6production = 6;
+        var fop6cost = 2e6;
+        var fop6defaultProduction = 1500;
+        var fop6production = 1500;
 
         // For Button 7
         var fop7quantity = 0;
-        var fop7cost = 700;
-        var fop7defaultProduction = 7;
-        var fop7production = 7;
+        var fop7cost = 14e6;
+        var fop7defaultProduction = 6500;
+        var fop7production = 6500;
 
         // For Button 8
         var fop8quantity = 0;
-        var fop8cost = 800;
-        var fop8defaultProduction = 8;
-        var fop8production = 8;
+        var fop8cost = 100e6;
+        var fop8defaultProduction = 25000;
+        var fop8production = 25000;
 
         // For Button 9
         var fop9quantity = 0;
-        var fop9cost = 900;
-        var fop9defaultProduction = 9;
-        var fop9production = 9;
+        var fop9cost = 875e6;
+        var fop9defaultProduction = 110000;
+        var fop9production = 110000;
 
         // For Button 10
         var fop10quantity = 0;
-        var fop10cost = 1000;
-        var fop10defaultProduction = 10;
-        var fop10production = 10;
+        var fop10cost = 12e9;
+        var fop10defaultProduction = 875000;
+        var fop10production = 875000;
 
         // For Button 11
         var fop11quantity = 0;
-        var fop11cost = 1100;
-        var fop11defaultProduction = 11;
-        var fop11production = 11;
+        var fop11cost = 330e9;
+        var fop11defaultProduction = 10e6;
+        var fop11production = 10e6;
 
         // For Button 12
         var fop12quantity = 0;
-        var fop12cost = 1200;
-        var fop12defaultProduction = 12;
-        var fop12production = 12;
+        var fop12cost = 6e12;
+        var fop12defaultProduction = 115e6;
+        var fop12production = 115e6;
 
         // For Button 13
         var fop13quantity = 0;
-        var fop13cost = 1300;
-        var fop13defaultProduction = 13;
-        var fop13production = 13;
+        var fop13cost = 85e12;
+        var fop13defaultProduction = 900e6;
+        var fop13production = 900e6;
 
         // For Button 14
         var fop14quantity = 0;
-        var fop14cost = 1400;
-        var fop14defaultProduction = 14;
-        var fop14production = 14;
+        var fop14cost = 990e12;
+        var fop14defaultProduction = 10e9;
+        var fop14production = 10e9;
 
         // For Button 15
         var fop15quantity = 0;
-        var fop15cost = 1500;
-        var fop15defaultProduction = 15;
-        var fop15production = 15;
+        var fop15cost = 13.5e15;
+        var fop15defaultProduction = 135e9;
+        var fop15production = 135e9;
 
         // For Button 16
         var fop16quantity = 0;
-        var fop16cost = 1600;
-        var fop16defaultProduction = 16;
-        var fop16production = 16;
+        var fop16cost = 220e15;
+        var fop16defaultProduction = 9.7e12;
+        var fop16production = 9.7e12;
 
         // For Button 17
         var fop17quantity = 0;
-        var fop17cost = 1700;
-        var fop17defaultProduction = 17;
-        var fop17production = 17;
+        var fop17cost = 5.1e18;
+        var fop17defaultProduction = 190e12;
+        var fop17production = 190e12;
 
         // For Button 18
         var fop18quantity = 0;
-        var fop18cost = 1800;
-        var fop18defaultProduction = 18;
-        var fop18production = 18;
+        var fop18cost = 75e18;
+        var fop18defaultProduction = 500e12;
+        var fop18production = 500e12;
 
         // For Button 19
         var fop19quantity = 0;
-        var fop19cost = 1900;
-        var fop19defaultProduction = 19;
-        var fop19production = 19;
+        var fop19cost = 1e21;
+        var fop19defaultProduction = 4.5e15;
+        var fop19production = 4.5e15;
 
         // For Button 20
         var fop20quantity = 0;
-        var fop20cost = 2000;
-        var fop20defaultProduction = 20;
-        var fop20production = 20;
+        var fop20cost = 25e21;
+        var fop20defaultProduction = 37e15;
+        var fop20production = 37e15;
 
         // For Button 21
         var fop21quantity = 0;
-        var fop21cost = 2100;
-        var fop21defaultProduction = 21;
-        var fop21production = 21;
+        var fop21cost = 775e21;
+        var fop21defaultProduction = 500e15;
+        var fop21production = 500e15;
 
         // For Button 22
         var fop22quantity = 0;
-        var fop22cost = 2200;
-        var fop22defaultProduction = 22;
-        var fop22production = 22;
+        var fop22cost = 31e24;
+        var fop22defaultProduction = 6.7e18;
+        var fop22production = 6.7e18;
 
         // For Button 23
         var fop23quantity = 0;
-        var fop23cost = 2300;
-        var fop23defaultProduction = 23;
-        var fop23production = 23;
+        var fop23cost = 805e24;
+        var fop23defaultProduction = 85e18;
+        var fop23production = 85e18;
 
         // For Button 24
         var fop24quantity = 0;
-        var fop24cost = 2400;
-        var fop24defaultProduction = 24;
-        var fop24production = 24;
+        var fop24cost = 50e27;
+        var fop24defaultProduction = 1e21;
+        var fop24production = 1e21;
 
         // For Button 25
         var fop25quantity = 0;
-        var fop25cost = 2500;
-        var fop25defaultProduction = 25;
-        var fop25production = 25;
+        var fop25cost = 4e30;
+        var fop25defaultProduction = 75e21;
+        var fop25production = 75e21;
 
 
         function styleNumber(number) {
@@ -453,6 +468,58 @@
             }
         }
 
+        function shortenedStyleNumber(number) {
+            if (number >= 1e63) {
+                return number.toExponential(2);
+            } else if (number >= 1e60) {
+                return (number / 1e60).toFixed(2) + 'Nod';
+            } else if (number >= 1e57) {
+                return (number / 1e57).toFixed(2) + 'Ocd';
+            } else if (number >= 1e54) {
+                return (number / 1e54).toFixed(2) + 'Spd';
+            } else if (number >= 1e51) {
+                return (number / 1e51).toFixed(2) + 'Sxd';
+            } else if (number >= 1e48) {
+                return (number / 1e48).toFixed(2) + 'Qid';
+            } else if (number >= 1e45) {
+                return (number / 1e45).toFixed(2) + 'Qad';
+            } else if (number >= 1e42) {
+                return (number / 1e42).toFixed(2) + 'Td';
+            } else if (number >= 1e39) {
+                return (number / 1e39).toFixed(2) + 'Dd';
+            } else if (number >= 1e36) {
+                return (number / 1e36).toFixed(2) + 'Ud';
+            } else if (number >= 1e33) {
+                return (number / 1e33).toFixed(2) + 'dc';
+            } else if (number >= 1e30) {
+                return (number / 1e30).toFixed(2) + 'no';
+            } else if (number >= 1e27) {
+                return (number / 1e27).toFixed(2) + 'oc';
+            } else if (number >= 1e24) {
+                return (number / 1e24).toFixed(2) + 'Sp';
+            } else if (number >= 1e21) {
+                return (number / 1e21).toFixed(2) + 'sx';
+            } else if (number >= 1e18) {
+                return (number / 1e18).toFixed(2) + 'Qi';
+            } else if (number >= 1e15) {
+                return (number / 1e15).toFixed(2) + 'qa';
+            } else if (number >= 1e12) {
+                return (number / 1e12).toFixed(2) + 'T';
+            } else if (number >= 1e9) {
+                return (number / 1e9).toFixed(2) + 'B';
+            } else if (number >= 1e6) {
+                return (number / 1e6).toFixed(2) + 'M';
+            } else if (number >= 1e5) {
+                return (number / 1e3).toFixed(0) + 'K';
+            } else if (number >= 1e4) {
+                return (number / 1e3).toFixed(1) + 'K';
+            } else if (number >= 1e3) {
+                return (number / 1e3).toFixed(2) + 'K';
+            } else {
+                return Math.round(number);
+            }
+        }
+
         function update() {
             console.log("Function is running!");
             updateData();
@@ -470,6 +537,11 @@
         function updateCoinDisplay() {
             document.getElementById('gold-showing').innerHTML = styleNumber(gold) + ' gold';
             document.getElementById('gpc-showing').innerHTML = 'Per click: ' + styleNumber(gpc);
+            if(fop25quantity > 0.5){
+                document.getElementById('send-chills-down-spine').innerHTML = '<i>"Why are you here?"<br>"Look at you - wasting your life - "<br>"Playing this pathetic excuse of a game"<br>"What is even the point?"<br>"It is literally time to stop playing - "<br>"and start doing something actually useful.<br><br>"Congratulations - you have now obtained yourself"<br>"But what does that even mean?<br>"Only fate knows where you are going."<br>"Whether it is to success...<br> or failure..."<br>"Although fate, and only fate knows,"<br>"You still get to dictate it."<br>"You, and only you."<br></i>'
+            }else{
+                document.getElementById('send-chills-down-spine').innerHTML = '<i>"You are not owned by yourself"<br><br><br>[insert short man here]</i>'
+            }
         }
 
         function updateStatsBoard() {
@@ -618,6 +690,59 @@
             // For Button 25
             document.getElementById('fop25-cost-display').innerHTML = 'Cost: <b>' + styleNumber(fop25cost) + '</b> gold';
             document.getElementById('fop25-quantity-display').innerHTML = fop25quantity;
+
+
+
+            // rounded tabs
+            document.getElementById('display-stats-fop1').innerHTML = 'You own: <b>' + fop1quantity + '</b> <br> Each miner produces an additional <b>' + shortenedStyleNumber(fop1production) + '</b> GpC.<br> In total, your miners produce an additional <b>' + shortenedStyleNumber(fop1production * fop1quantity) + '</b> GpC.'
+
+            document.getElementById('display-stats-fop2').innerHTML = 'You own: <b>' + fop2quantity + '</b> <br> Each pickaxe produces an additional <b>' + shortenedStyleNumber(fop2production) + '</b> GpC.<br> In total, your pickaxes produce an additional <b>' + shortenedStyleNumber(fop2production * fop2quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop3').innerHTML = 'You own: <b>' + fop3quantity + '</b> <br> Each orchard produces an additional <b>' + shortenedStyleNumber(fop3production) + '</b> GpC.<br> In total, your orchards produce an additional <b>' + shortenedStyleNumber(fop3production * fop3quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop4').innerHTML = 'You own: <b>' + fop4quantity + '</b> <br> Each microwave produces an additional <b>' + shortenedStyleNumber(fop4production) + '</b> GpC.<br> In total, your microwaves produce an additional <b>' + shortenedStyleNumber(fop4production * fop4quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop5').innerHTML = 'You own: <b>' + fop5quantity + '</b> <br> Each macrowave produces an additional <b>' + shortenedStyleNumber(fop5production) + '</b> GpC.<br> In total, your macrowaves produce an additional <b>' + shortenedStyleNumber(fop5production * fop5quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop6').innerHTML = 'You own: <b>' + fop6quantity + '</b> <br> Each Taylor Swift produces an additional <b>' + shortenedStyleNumber(fop6production) + '</b> GpC.<br> In total, your Taylor Swifts produce an additional <b>' + shortenedStyleNumber(fop6production * fop6quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop7').innerHTML = 'You own: <b>' + fop7quantity + '</b> <br> Each mine produces an additional <b>' + shortenedStyleNumber(fop7production) + '</b> GpC.<br> In total, your mines produce an additional <b>' + shortenedStyleNumber(fop7production * fop7quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop8').innerHTML = 'You own: <b>' + fop8quantity + '</b> <br> Each quarry produces an additional <b>' + shortenedStyleNumber(fop8production) + '</b> GpC.<br> In total, your quarries produce an additional <b>' + shortenedStyleNumber(fop8production * fop8quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop9').innerHTML = 'You own: <b>' + fop9quantity + '</b> <br> Each brain produces an additional <b>' + shortenedStyleNumber(fop9production) + '</b> GpC.<br> In total, your brains produce an additional <b>' + shortenedStyleNumber(fop9production * fop9quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop10').innerHTML = 'You own: <b>' + fop10quantity + '</b> <br> Each neutron star produces an additional <b>' + shortenedStyleNumber(fop10production) + '</b> GpC.<br> In total, your neutron stars produce an additional <b>' + shortenedStyleNumber(fop10production * fop10quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop11').innerHTML = 'You own: <b>' + fop11quantity + '</b> <br> Each ocean produces an additional <b>' + shortenedStyleNumber(fop11production) + '</b> GpC.<br> In total, your oceans produce an additional <b>' + shortenedStyleNumber(fop11production * fop11quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop12').innerHTML = 'You own: <b>' + fop12quantity + '</b> <br> Each particle accelerator produces an additional <b>' + shortenedStyleNumber(fop12production) + '</b> GpC.<br> In total, your particle accelerators produce an additional <b>' + shortenedStyleNumber(fop12production * fop12quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop13').innerHTML = 'You own: <b>' + fop13quantity + '</b> <br> Each Earth produces an additional <b>' + shortenedStyleNumber(fop13production) + '</b> GpC.<br> In total, your Earths produce an additional <b>' + shortenedStyleNumber(fop13production * fop13quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop14').innerHTML = 'You own: <b>' + fop14quantity + '</b> <br> Each magnifying lens produces an additional <b>' + shortenedStyleNumber(fop14production) + '</b> GpC.<br> In total, your magnifying lenses produce an additional <b>' + shortenedStyleNumber(fop14production * fop14quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop15').innerHTML = 'You own: <b>' + fop15quantity + '</b> <br> Each fate produces an additional <b>' + shortenedStyleNumber(fop15production) + '</b> GpC.<br> In total, your fates produce an additional <b>' + shortenedStyleNumber(fop15production * fop15quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop16').innerHTML = 'You own: <b>' + fop16quantity + '</b> <br> Each backroom produces an additional <b>' + shortenedStyleNumber(fop16production) + '</b> GpC.<br> In total, your backrooms produce an additional <b>' + shortenedStyleNumber(fop16production * fop16quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop17').innerHTML = 'You own: <b>' + fop17quantity + '</b> <br> Each supernova produces an additional <b>' + shortenedStyleNumber(fop17production) + '</b> GpC.<br> In total, your supernovae produce an additional <b>' + shortenedStyleNumber(fop17production * fop17quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop18').innerHTML = 'You own: <b>' + fop18quantity + '</b> <br> Each destiny produces an additional <b>' + shortenedStyleNumber(fop18production) + '</b> GpC.<br> In total, your destinies produce an additional <b>' + shortenedStyleNumber(fop18production * fop18quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop19').innerHTML = 'You own: <b>' + fop19quantity + '</b> <br> Each time machine produces an additional <b>' + shortenedStyleNumber(fop19production) + '</b> GpC.<br> In total, your time machines produce an additional <b>' + shortenedStyleNumber(fop19production * fop19quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop20').innerHTML = 'You own: <b>' + fop20quantity + '</b> <br> Each js console produces an additional <b>' + shortenedStyleNumber(fop20production) + '</b> GpC.<br> In total, your js consoles produce an additional <b>' + shortenedStyleNumber(fop20production * fop20quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop21').innerHTML = 'You own: <b>' + fop21quantity + '</b> <br> Each galaxy produces an additional <b>' + shortenedStyleNumber(fop21production) + '</b> GpC.<br> In total, your galaxies produce an additional <b>' + shortenedStyleNumber(fop21production * fop21quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop22').innerHTML = 'You own: <b>' + fop22quantity + '</b> <br> Each alternate reality produces an additional <b>' + shortenedStyleNumber(fop22production) + '</b> GpC.<br> In total, your alternate realities produce an additional <b>' + shortenedStyleNumber(fop22production * fop22quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop23').innerHTML = 'You own: <b>' + fop23quantity + '</b> <br> Each multiverse produces an additional <b>' + shortenedStyleNumber(fop23production) + '</b> GpC.<br> In total, your multiverses produce an additional <b>' + shortenedStyleNumber(fop23production * fop23quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop24').innerHTML = 'You own: <b>' + fop24quantity + '</b> <br> Each AlgoMarbler produces an additional <b>' + shortenedStyleNumber(fop24production) + '</b> GpC.<br> In total, your AlgoMarblers produce an additional <b>' + shortenedStyleNumber(fop24production * fop24quantity) + '</b> GpC.';
+
+            document.getElementById('display-stats-fop25').innerHTML = 'You own: <b>' + fop25quantity + '</b> <br> Every you produces an additional <b>' + shortenedStyleNumber(fop25production) + '</b> GpC.<br> In total, you produce an additional <b>' + shortenedStyleNumber(fop25production * fop25quantity) + '</b> GpC.';
 
         }
 
@@ -1040,6 +1165,13 @@
                     <div id="fop1-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop1-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"A nice slave to assist you with your endeavours"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #FF0000"><b>[Class: Labour]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop1">You own: <b>0</b> <br> Each miner produces an additional <b>1</b> GpC.<br> In total, your miners produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
 
             <!-- Button 2 -->
@@ -1050,7 +1182,15 @@
                     <div id="fop2-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop2-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"A helpful tool to boost your mining efficiency"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #CC00FF"><b>[Class: Capital]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop2">You own: <b>0</b> <br> Each pickaxe produces an additional <b>1</b> GpC.<br> In total, your pickaxes produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 3 -->
             <button onclick="buyFOP3(fop3cost);" style="background-image: url('fop3.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1060,6 +1200,13 @@
                     <div id="fop3-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop3-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"A golden orchard to produce golden nuggets"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #00BB00"><b>[Class: Land]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop3">You own: <b>0</b> <br> Each orchard produces an additional <b>1</b> GpC.<br> In total, your orchards produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
 
             <!-- Button 4 -->
@@ -1070,7 +1217,15 @@
                     <div id="fop4-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop4-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Turns burnt food scraps into shiny gold"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #CC00FF"><b>[Class: Capital]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop4">You own: <b>0</b> <br> Each microwave produces an additional <b>1</b> GpC.<br> In total, your microwaves produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 5 -->
             <button onclick="buyFOP5(fop5cost);" style="background-image: url('fop5.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1080,7 +1235,15 @@
                     <div id="fop5-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop5-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Microwave on steroids"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #CC00FF"><b>[Class: Capital]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop5">You own: <b>0</b> <br> Each macrowave produces an additional <b>1</b> GpC.<br> In total, your macrowaves produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 6 -->
             <button onclick="buyFOP6(fop6cost);" style="background-image: url('fop6.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1090,7 +1253,15 @@
                     <div id="fop6-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop6-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Harness her power and materialise it into gold!"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #0099FF"><b>[Class: Enterprise]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop6">You own: <b>0</b> <br> Each Taylor Swift produces an additional <b>1</b> GpC.<br> In total, your Taylor Swifts produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 7 -->
             <button onclick="buyFOP7(fop7cost);" style="background-image: url('fop7.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1100,7 +1271,15 @@
                     <div id="fop7-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop7-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Excavate gold from its natural resting location"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #00BB00"><b>[Class: Land]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop7">You own: <b>0</b> <br> Each mine produces an additional <b>1</b> GpC.<br> In total, your mines produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 8 -->
             <button onclick="buyFOP8(fop8cost);" style="background-image: url('fop8.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1110,7 +1289,15 @@
                     <div id="fop8-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop8-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Excavate gold from its natural resting location, v2"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #00BB00"><b>[Class: Land]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop8">You own: <b>0</b> <br> Each quarry produces an additional <b>1</b> GpC.<br> In total, your quarries produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 9 -->
             <button onclick="buyFOP9(fop9cost);" style="background-image: url('fop9.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1120,6 +1307,13 @@
                     <div id="fop9-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop9-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Utilise ingenuity to produce golds"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #0099FF"><b>[Class: Enterprise]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop9">You own: <b>0</b> <br> Each brain produces an additional <b>1</b> GpC.<br> In total, your brains produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
 
             <!-- Button 10 -->
@@ -1130,7 +1324,15 @@
                     <div id="fop10-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop10-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Produces gold out of sheer pressure"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #00BB00"><b>[Class: Land]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop10">You own: <b>0</b> <br> Each neutron star produces an additional <b>1</b> GpC.<br> In total, your neutron stars produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 11 -->
             <button onclick="buyFOP11(fop11cost);" style="background-image: url('fop11.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1140,7 +1342,15 @@
                     <div id="fop11-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop11-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Extract gold from the most plentiful deposits on Earth"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #00BB00"><b>[Class: Land]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop11">You own: <b>0</b> <br> Each ocean produces an additional <b>1</b> GpC.<br> In total, your oceans produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 12 -->
             <button onclick="buyFOP12(fop12cost);" style="background-image: url('fop12.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1150,7 +1360,15 @@
                     <div id="fop12-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop12-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Fuses new gold into existence"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #CC00FF"><b>[Class: Capital]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop12">You own: <b>0</b> <br> Each particle accelerator produces an additional <b>1</b> GpC.<br> In total, your particle accel.s produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 13 -->
             <button onclick="buyFOP13(fop13cost);" style="background-image: url('fop13.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1160,7 +1378,15 @@
                     <div id="fop13-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop13-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Manipulate an entire planet to your will"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #00BB00"><b>[Class: Land]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop13">You own: <b>0</b> <br> Each earth produces an additional <b>1</b> GpC.<br> In total, your earths produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 14 -->
             <button onclick="buyFOP14(fop14cost);" style="background-image: url('fop14.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1170,7 +1396,15 @@
                     <div id="fop14-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop14-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Bends photons into gold"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #CC00FF"><b>[Class: Capital]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop14">You own: <b>0</b> <br> Each magnifying lens produces an additional <b>1</b> GpC.<br> In total, your magnifying lenses produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 15 -->
             <button onclick="buyFOP15(fop15cost);" style="background-image: url('fop15.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1180,7 +1414,15 @@
                     <div id="fop15-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop15-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"See the future"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #0099FF"><b>[Class: Enterprise]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop15">You own: <b>0</b> <br> Each fate produces an additional <b>1</b> GpC.<br> In total, your fates produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 16 -->
             <button onclick="buyFOP16(fop16cost);" style="background-image: url('fop16.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1190,7 +1432,15 @@
                     <div id="fop16-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop16-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Not sure what this means now"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #CC00FF"><b>[Class: Capital]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop16">You own: <b>0</b> <br> Each backroom produces an additional <b>1</b> GpC.<br> In total, your backrooms produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 17 -->
             <button onclick="buyFOP17(fop17cost);" style="background-image: url('fop17.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1200,7 +1450,15 @@
                     <div id="fop17-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop17-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Harness the energy of supernovae into gold"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #00BB00"><b>[Class: Land]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop17">You own: <b>0</b> <br> Each supernova produces an additional <b>1</b> GpC.<br> In total, your suprnovae produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 18 -->
             <button onclick="buyFOP18(fop18cost);" style="background-image: url('fop18.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1210,7 +1468,15 @@
                     <div id="fop18-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop18-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Manipulate the future"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #0099FF"><b>[Class: Enterprise]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop18">You own: <b>0</b> <br> Each destiny produces an additional <b>1</b> GpC.<br> In total, your destinies produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 19 -->
             <button onclick="buyFOP19(fop19cost);" style="background-image: url('fop19.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1220,7 +1486,15 @@
                     <div id="fop19-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop19-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Snatch gold from alternate timelines"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #CC00FF"><b>[Class: Capital]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop19">You own: <b>0</b> <br> Each time machine produces an additional <b>1</b> GpC.<br> In total, your time machines produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 20 -->
             <button onclick="buyFOP20(fop20cost);" style="background-image: url('fop20.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1230,7 +1504,15 @@
                     <div id="fop20-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop20-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Hack gold from the very code this game was made in"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #CC00FF"><b>[Class: Capital]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop20">You own: <b>0</b> <br> Each js console produces an additional <b>1</b> GpC.<br> In total, your js consoles produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 21 -->
             <button onclick="buyFOP21(fop21cost);" style="background-image: url('fop21.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1240,6 +1522,13 @@
                     <div id="fop21-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop21-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: 4vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Gather gold from other galaxies"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #00BB00"><b>[Class: Land]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop21">You own: <b>0</b> <br> Each galaxy produces an additional <b>1</b> GpC.<br> In total, your galaxies produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
 
 
@@ -1251,7 +1540,15 @@
                     <div id="fop22-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop22-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: -7.5vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Travel to a parallel universe for gold"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #00BB00"><b>[Class: Land]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop22">You own: <b>0</b> <br> Each alt. reality produces an additional <b>1</b> GpC.<br> In total, your alt. realities produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 23 -->
             <button onclick="buyFOP23(fop23cost);" style="background-image: url('fop23.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1261,7 +1558,15 @@
                     <div id="fop23-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop23-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: -7.5vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Travel to a multiverse for gold"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #00BB00"><b>[Class: Land]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop23">You own: <b>0</b> <br> Each multiverse produces an additional <b>1</b> GpC.<br> In total, your multiverses produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 24 -->
             <button onclick="buyFOP24(fop24cost);" style="background-image: url('fop24.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1271,7 +1576,15 @@
                     <div id="fop24-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop24-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="top: -7.5vw; border-radius: 0.5vw; width: 18vw; height: 6vw; position: auto; text-align: center; font-size: 0.75vw;">
+                    <div style="width: 18vw; height: 1vw; background-color: #FFFFFF"><i>"Forcibly force the very creator to slave away at coins"</i></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #0099FF"><b>[Class: Enterprise]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop24">You own: <b>0</b> <br> Each AlgoMarbler produces an additional <b>1</b> GpC.<br> In total, your AlgoMarblers produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
 
             <!-- Button 25 -->
             <button onclick="buyFOP25(fop25cost);" style="background-image: url('fop25.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; width: 25vw; height: 4vw; border-radius: 0.5vw; border-color: rgba(0,0,0,0);" class="hover-grow">
@@ -1281,7 +1594,16 @@
                     <div id="fop25-cost-display" style="float: left; text-align: center; width: 14vw; padding-left: 0vw; height: 1.5vw; font-size: 0.875vw; border-radius: 1vw; background-color: rgba(255,255,255,0.5)"></div>
                 </div>
                 <div id="fop25-quantity-display" style="float: left; width: 7.125vw; text-align: right; height: 4vw;  font-size: 1.75vw; padding-right: 0vw;"></div>
+                <div class="hiddenDiv" style="border-radius: 0.5vw; width: 18vw; height: 19vw; position: auto; text-align: center; font-size: 0.75vw; top: -20vw;">
+                    <div id="send-chills-down-spine" style="width: 18vw; height: 14vw; background-color: #FFFFFF"></div>
+                    <div style="width: 18vw; height: 1.25vw; background-color: #FFFFFF; color: #CC00FF"><b>[Class: Capital]</b></div>
+                    <div style="width: 14vw; height: 0.05vw; padding-left: 2vw; padding-right: 2vw; background-color: #555555"></div>
+                    <div style="width: 18vw; height: 0.5vw; background-color: #FFFFFF"></div>
+                    <div id="display-stats-fop25">You own: <b>0</b> <br> Each 'you' produces an additional <b>1</b> GpC.<br> In total, 'you' produce an additional <b>0</b> GpC.</div>
+                </div>
             </button>
+
+
         </div>
         <div style="height: 2vh;"></div>
         <div id="stats-panel">
