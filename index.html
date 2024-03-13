@@ -61,6 +61,7 @@
             text-align: left;
         }
 
+
         #floor-panel {
             width: 100vw;
             height: 6vh;
@@ -240,8 +241,16 @@
             height: 75vh;
             background-size: cover;
             background-repeat: no-repeat;
+            size: 80%;
             background-position: center;
-            border-color: rgba(0,0,0,0);
+            border-color: rgba(0,0,0,0); 
+            transition: scale 0.2s ease-in-out;       
+        }`
+
+        /* Define the hover effect */
+        #main-clicker:hover {
+          /* Scale the button by 10% on hover */
+          transform: scale(1.01);
         }
 
         /* Add a class to your button for styling */
@@ -291,135 +300,135 @@
 
         // For Button 4
         var fop4quantity = 0;
-        var fop4cost = 40000;
-        var fop4defaultProduction = 100;
-        var fop4production = 100;
+        var fop4cost = 60000;
+        var fop4defaultProduction = 200;
+        var fop4production = 200;
 
         // For Button 5
         var fop5quantity = 0;
-        var fop5cost = 375000;
-        var fop5defaultProduction = 600;
-        var fop5production = 600;
+        var fop5cost = 675000;
+        var fop5defaultProduction = 1250;
+        var fop5production = 1250;
 
         // For Button 6
         var fop6quantity = 0;
-        var fop6cost = 2e6;
-        var fop6defaultProduction = 1500;
-        var fop6production = 1500;
+        var fop6cost = 6e6;
+        var fop6defaultProduction = 7500;
+        var fop6production = 7500;
 
         // For Button 7
         var fop7quantity = 0;
-        var fop7cost = 14e6;
-        var fop7defaultProduction = 6500;
-        var fop7production = 6500;
+        var fop7cost = 95e6;
+        var fop7defaultProduction = 40000;
+        var fop7production = 40000;
 
         // For Button 8
         var fop8quantity = 0;
-        var fop8cost = 100e6;
-        var fop8defaultProduction = 25000;
-        var fop8production = 25000;
+        var fop8cost = 3e9;
+        var fop8defaultProduction = 750000;
+        var fop8production = 750000;
 
         // For Button 9
         var fop9quantity = 0;
-        var fop9cost = 875e6;
-        var fop9defaultProduction = 110000;
-        var fop9production = 110000;
+        var fop9cost = 25e9;
+        var fop9defaultProduction = 2.5e6;
+        var fop9production = 2.5e6;
 
         // For Button 10
         var fop10quantity = 0;
-        var fop10cost = 12e9;
-        var fop10defaultProduction = 875000;
-        var fop10production = 875000;
+        var fop10cost = 185e9;
+        var fop10defaultProduction = 38e6;
+        var fop10production = 38e6;
 
         // For Button 11
         var fop11quantity = 0;
-        var fop11cost = 330e9;
-        var fop11defaultProduction = 10e6;
-        var fop11production = 10e6;
+        var fop11cost = 1.2e12;
+        var fop11defaultProduction = 0.35e9;
+        var fop11production = 0.35e9;
 
         // For Button 12
         var fop12quantity = 0;
-        var fop12cost = 6e12;
-        var fop12defaultProduction = 115e6;
-        var fop12production = 115e6;
+        var fop12cost = 38e12;
+        var fop12defaultProduction = 2e9;
+        var fop12production = 2e9;
 
         // For Button 13
         var fop13quantity = 0;
-        var fop13cost = 85e12;
-        var fop13defaultProduction = 900e6;
-        var fop13production = 900e6;
+        var fop13cost = 1.4e15;
+        var fop13defaultProduction = 0.3e12;
+        var fop13production = 0.3e12;
 
         // For Button 14
         var fop14quantity = 0;
-        var fop14cost = 990e12;
-        var fop14defaultProduction = 10e9;
-        var fop14production = 10e9;
+        var fop14cost = 30e15;
+        var fop14defaultProduction = 4e12;
+        var fop14production = 4e12;
 
         // For Button 15
         var fop15quantity = 0;
-        var fop15cost = 13.5e15;
-        var fop15defaultProduction = 135e9;
-        var fop15production = 135e9;
+        var fop15cost = 888.8e15;
+        var fop15defaultProduction = 56e12;
+        var fop15production = 56e12;
 
         // For Button 16
         var fop16quantity = 0;
-        var fop16cost = 220e15;
-        var fop16defaultProduction = 9.7e12;
-        var fop16production = 9.7e12;
+        var fop16cost = 19e18;
+        var fop16defaultProduction = 990e12;
+        var fop16production = 990e12;
 
         // For Button 17
         var fop17quantity = 0;
-        var fop17cost = 5.1e18;
-        var fop17defaultProduction = 190e12;
-        var fop17production = 190e12;
+        var fop17cost = 335e18;
+        var fop17defaultProduction = 8.7e15;
+        var fop17production = 8.7e15;
 
         // For Button 18
         var fop18quantity = 0;
-        var fop18cost = 75e18;
-        var fop18defaultProduction = 500e12;
-        var fop18production = 500e12;
+        var fop18cost = 6.7e21;
+        var fop18defaultProduction = 99e15;
+        var fop18production = 99e15;
 
         // For Button 19
         var fop19quantity = 0;
-        var fop19cost = 1e21;
-        var fop19defaultProduction = 4.5e15;
-        var fop19production = 4.5e15;
+        var fop19cost = 121e21;
+        var fop19defaultProduction = 840e15;
+        var fop19production = 840e15;
 
         // For Button 20
         var fop20quantity = 0;
-        var fop20cost = 25e21;
-        var fop20defaultProduction = 37e15;
-        var fop20production = 37e15;
+        var fop20cost = 28e24;
+        var fop20defaultProduction = 125e18;
+        var fop20production = 125e18;
 
         // For Button 21
         var fop21quantity = 0;
-        var fop21cost = 775e21;
-        var fop21defaultProduction = 500e15;
-        var fop21production = 500e15;
+        var fop21cost = 1.1e27;
+        var fop21defaultProduction = 0.1e21;
+        var fop21production = 0.1e21;
 
         // For Button 22
         var fop22quantity = 0;
-        var fop22cost = 31e24;
-        var fop22defaultProduction = 6.7e18;
-        var fop22production = 6.7e18;
+        var fop22cost = 150e27;
+        var fop22defaultProduction = 6e21;
+        var fop22production = 6e21;
 
         // For Button 23
         var fop23quantity = 0;
-        var fop23cost = 805e24;
-        var fop23defaultProduction = 85e18;
-        var fop23production = 85e18;
+        var fop23cost = 30.5e30;
+        var fop23defaultProduction = 2e23;
+        var fop23production = 2e23;
 
         // For Button 24
         var fop24quantity = 0;
-        var fop24cost = 50e27;
-        var fop24defaultProduction = 1e21;
-        var fop24production = 1e21;
+        var fop24cost = 8e33;
+        var fop24defaultProduction = 0.3e26;
+        var fop24production = 0.3e26;
 
         // For Button 25
         var fop25quantity = 0;
-        var fop25cost = 4e30;
-        var fop25defaultProduction = 75e21;
-        var fop25production = 75e21;
+        var fop25cost = 1.6e36;
+        var fop25defaultProduction = 3e27;
+        var fop25production = 3e27;
 
 
         function styleNumber(number) {
@@ -557,20 +566,20 @@
         }
 
         function checkForUpgrades() {
-            if (lifetimeGold >= 1000000 && !upgrades1) {
+            if (lifetimeGold >= 3 && !upgrades1) {
                 document.getElementById("upgrade-panel").innerHTML +=
                     '<div id="upgradenumberindex1" style="height: 9vh;">' +
                         '<div style="font-size: 2.5vh; height: 3vh; text-align: left; padding-left: 1.5vw; width: 23.5vw; background-image: url(\'upgrade-typical.png\'); background-size: cover; background-repeat: no-repeat; border-radius: 1vh 1vh 0 0;"><b>Clicky Boosty I </b></div>' +
                         '<div style="height: 6vh; background-color: #999999; border-radius: 0 0 1vh 1vh;">' +
-                            '<div style="height: 3vh; padding-left: 1vw; font-size: 1.5vh;">Gold per click +1%</div>' +
+                            '<div style="height: 3vh; padding-left: 1vw; font-size: 1.5vh;">Gold per click +5%</div>' +
                             '<div style="height: 3vh; text-align: center;">' +
-                                '<button onClick="upgradeTypical(1e+6, 1.01, 1)" style="width: 23.5vw; font-size: 1.5vh; height: 2.5vh; border: 0px; border-radius: 0.5vh;">Buy (1 million gold)</button>' +
+                                '<button onClick="upgradeTypical(3, 1.05, 1)" style="width: 23.5vw; font-size: 1.5vh; height: 2.5vh; border: 0px; border-radius: 0.5vh;">Buy (3 gold)</button>' +
                             '</div>' +
                         '</div>' + 
                     '</div><div style="border-radius: 0px; height: 1.5vh; width: 0vw;"></div>';
                 upgradeAmount++;
                 upgrades1 = true;
-            }
+            };
         }
 
         function updateUpgradeAmount() {
@@ -694,55 +703,55 @@
 
 
             // rounded tabs
-            document.getElementById('display-stats-fop1').innerHTML = 'You own: <b>' + fop1quantity + '</b> <br> Each miner produces an additional <b>' + shortenedStyleNumber(fop1production) + '</b> GpC.<br> In total, your miners produce an additional <b>' + shortenedStyleNumber(fop1production * fop1quantity) + '</b> GpC.'
+            document.getElementById('display-stats-fop1').innerHTML = 'You own: <b>' + fop1quantity + '</b> <br> Each miner produces an additional <b>' + shortenedStyleNumber(fop1production * minerMulti) + '</b> GpC.<br> In total, your miners produce an additional <b>' + shortenedStyleNumber(fop1production * fop1quantity * minerMulti) + '</b> GpC.'
 
-            document.getElementById('display-stats-fop2').innerHTML = 'You own: <b>' + fop2quantity + '</b> <br> Each pickaxe produces an additional <b>' + shortenedStyleNumber(fop2production) + '</b> GpC.<br> In total, your pickaxes produce an additional <b>' + shortenedStyleNumber(fop2production * fop2quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop2').innerHTML = 'You own: <b>' + fop2quantity + '</b> <br> Each pickaxe produces an additional <b>' + shortenedStyleNumber(fop2production * capitalMulti) + '</b> GpC.<br> In total, your pickaxes produce an additional <b>' + shortenedStyleNumber(fop2production * fop2quantity * capitalMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop3').innerHTML = 'You own: <b>' + fop3quantity + '</b> <br> Each orchard produces an additional <b>' + shortenedStyleNumber(fop3production) + '</b> GpC.<br> In total, your orchards produce an additional <b>' + shortenedStyleNumber(fop3production * fop3quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop3').innerHTML = 'You own: <b>' + fop3quantity + '</b> <br> Each orchard produces an additional <b>' + shortenedStyleNumber(fop3production * landMulti) + '</b> GpC.<br> In total, your orchards produce an additional <b>' + shortenedStyleNumber(fop3production * fop3quantity * landMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop4').innerHTML = 'You own: <b>' + fop4quantity + '</b> <br> Each microwave produces an additional <b>' + shortenedStyleNumber(fop4production) + '</b> GpC.<br> In total, your microwaves produce an additional <b>' + shortenedStyleNumber(fop4production * fop4quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop4').innerHTML = 'You own: <b>' + fop4quantity + '</b> <br> Each microwave produces an additional <b>' + shortenedStyleNumber(fop4production * capitalMulti) + '</b> GpC.<br> In total, your microwaves produce an additional <b>' + shortenedStyleNumber(fop4production * fop4quantity * capitalMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop5').innerHTML = 'You own: <b>' + fop5quantity + '</b> <br> Each macrowave produces an additional <b>' + shortenedStyleNumber(fop5production) + '</b> GpC.<br> In total, your macrowaves produce an additional <b>' + shortenedStyleNumber(fop5production * fop5quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop5').innerHTML = 'You own: <b>' + fop5quantity + '</b> <br> Each macrowave produces an additional <b>' + shortenedStyleNumber(fop5production * capitalMulti) + '</b> GpC.<br> In total, your macrowaves produce an additional <b>' + shortenedStyleNumber(fop5production * fop5quantity * capitalMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop6').innerHTML = 'You own: <b>' + fop6quantity + '</b> <br> Each Taylor Swift produces an additional <b>' + shortenedStyleNumber(fop6production) + '</b> GpC.<br> In total, your Taylor Swifts produce an additional <b>' + shortenedStyleNumber(fop6production * fop6quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop6').innerHTML = 'You own: <b>' + fop6quantity + '</b> <br> Each Taylor Swift produces an additional <b>' + shortenedStyleNumber(fop6production * enterpriseMulti) + '</b> GpC.<br> In total, your Taylor Swifts produce an additional <b>' + shortenedStyleNumber(fop6production * fop6quantity * enterpriseMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop7').innerHTML = 'You own: <b>' + fop7quantity + '</b> <br> Each mine produces an additional <b>' + shortenedStyleNumber(fop7production) + '</b> GpC.<br> In total, your mines produce an additional <b>' + shortenedStyleNumber(fop7production * fop7quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop7').innerHTML = 'You own: <b>' + fop7quantity + '</b> <br> Each mine produces an additional <b>' + shortenedStyleNumber(fop7production * landMulti) + '</b> GpC.<br> In total, your mines produce an additional <b>' + shortenedStyleNumber(fop7production * fop7quantity * landMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop8').innerHTML = 'You own: <b>' + fop8quantity + '</b> <br> Each quarry produces an additional <b>' + shortenedStyleNumber(fop8production) + '</b> GpC.<br> In total, your quarries produce an additional <b>' + shortenedStyleNumber(fop8production * fop8quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop8').innerHTML = 'You own: <b>' + fop8quantity + '</b> <br> Each quarry produces an additional <b>' + shortenedStyleNumber(fop8production * landMulti) + '</b> GpC.<br> In total, your quarries produce an additional <b>' + shortenedStyleNumber(fop8production * fop8quantity * landMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop9').innerHTML = 'You own: <b>' + fop9quantity + '</b> <br> Each brain produces an additional <b>' + shortenedStyleNumber(fop9production) + '</b> GpC.<br> In total, your brains produce an additional <b>' + shortenedStyleNumber(fop9production * fop9quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop9').innerHTML = 'You own: <b>' + fop9quantity + '</b> <br> Each brain produces an additional <b>' + shortenedStyleNumber(fop9production * enterpriseMulti) + '</b> GpC.<br> In total, your brains produce an additional <b>' + shortenedStyleNumber(fop9production * fop9quantity * enterpriseMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop10').innerHTML = 'You own: <b>' + fop10quantity + '</b> <br> Each neutron star produces an additional <b>' + shortenedStyleNumber(fop10production) + '</b> GpC.<br> In total, your neutron stars produce an additional <b>' + shortenedStyleNumber(fop10production * fop10quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop10').innerHTML = 'You own: <b>' + fop10quantity + '</b> <br> Each neutron star produces an additional <b>' + shortenedStyleNumber(fop10production * landMulti) + '</b> GpC.<br> In total, your neutron stars produce an additional <b>' + shortenedStyleNumber(fop10production * fop10quantity * landMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop11').innerHTML = 'You own: <b>' + fop11quantity + '</b> <br> Each ocean produces an additional <b>' + shortenedStyleNumber(fop11production) + '</b> GpC.<br> In total, your oceans produce an additional <b>' + shortenedStyleNumber(fop11production * fop11quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop11').innerHTML = 'You own: <b>' + fop11quantity + '</b> <br> Each ocean produces an additional <b>' + shortenedStyleNumber(fop11production * landMulti) + '</b> GpC.<br> In total, your oceans produce an additional <b>' + shortenedStyleNumber(fop11production * fop11quantity * landMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop12').innerHTML = 'You own: <b>' + fop12quantity + '</b> <br> Each particle accelerator produces an additional <b>' + shortenedStyleNumber(fop12production) + '</b> GpC.<br> In total, your particle accelerators produce an additional <b>' + shortenedStyleNumber(fop12production * fop12quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop12').innerHTML = 'You own: <b>' + fop12quantity + '</b> <br> Each particle accelerator produces an additional <b>' + shortenedStyleNumber(fop12production * capitalMulti) + '</b> GpC.<br> In total, your particle accelerators produce an additional <b>' + shortenedStyleNumber(fop12production * fop12quantity * capitalMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop13').innerHTML = 'You own: <b>' + fop13quantity + '</b> <br> Each Earth produces an additional <b>' + shortenedStyleNumber(fop13production) + '</b> GpC.<br> In total, your Earths produce an additional <b>' + shortenedStyleNumber(fop13production * fop13quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop13').innerHTML = 'You own: <b>' + fop13quantity + '</b> <br> Each Earth produces an additional <b>' + shortenedStyleNumber(fop13production * landMulti) + '</b> GpC.<br> In total, your Earths produce an additional <b>' + shortenedStyleNumber(fop13production * fop13quantity * landMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop14').innerHTML = 'You own: <b>' + fop14quantity + '</b> <br> Each magnifying lens produces an additional <b>' + shortenedStyleNumber(fop14production) + '</b> GpC.<br> In total, your magnifying lenses produce an additional <b>' + shortenedStyleNumber(fop14production * fop14quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop14').innerHTML = 'You own: <b>' + fop14quantity + '</b> <br> Each magnifying lens produces an additional <b>' + shortenedStyleNumber(fop14production * capitalMulti) + '</b> GpC.<br> In total, your magnifying lenses produce an additional <b>' + shortenedStyleNumber(fop14production * fop14quantity * capitalMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop15').innerHTML = 'You own: <b>' + fop15quantity + '</b> <br> Each fate produces an additional <b>' + shortenedStyleNumber(fop15production) + '</b> GpC.<br> In total, your fates produce an additional <b>' + shortenedStyleNumber(fop15production * fop15quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop15').innerHTML = 'You own: <b>' + fop15quantity + '</b> <br> Each fate produces an additional <b>' + shortenedStyleNumber(fop15production * enterpriseMulti) + '</b> GpC.<br> In total, your fates produce an additional <b>' + shortenedStyleNumber(fop15production * fop15quantity * enterpriseMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop16').innerHTML = 'You own: <b>' + fop16quantity + '</b> <br> Each backroom produces an additional <b>' + shortenedStyleNumber(fop16production) + '</b> GpC.<br> In total, your backrooms produce an additional <b>' + shortenedStyleNumber(fop16production * fop16quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop16').innerHTML = 'You own: <b>' + fop16quantity + '</b> <br> Each backroom produces an additional <b>' + shortenedStyleNumber(fop16production * capitalMulti) + '</b> GpC.<br> In total, your backrooms produce an additional <b>' + shortenedStyleNumber(fop16production * fop16quantity * capitalMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop17').innerHTML = 'You own: <b>' + fop17quantity + '</b> <br> Each supernova produces an additional <b>' + shortenedStyleNumber(fop17production) + '</b> GpC.<br> In total, your supernovae produce an additional <b>' + shortenedStyleNumber(fop17production * fop17quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop17').innerHTML = 'You own: <b>' + fop17quantity + '</b> <br> Each supernova produces an additional <b>' + shortenedStyleNumber(fop17production * landMulti) + '</b> GpC.<br> In total, your supernovae produce an additional <b>' + shortenedStyleNumber(fop17production * fop17quantity * landMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop18').innerHTML = 'You own: <b>' + fop18quantity + '</b> <br> Each destiny produces an additional <b>' + shortenedStyleNumber(fop18production) + '</b> GpC.<br> In total, your destinies produce an additional <b>' + shortenedStyleNumber(fop18production * fop18quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop18').innerHTML = 'You own: <b>' + fop18quantity + '</b> <br> Each destiny produces an additional <b>' + shortenedStyleNumber(fop18production * enterpriseMulti) + '</b> GpC.<br> In total, your destinies produce an additional <b>' + shortenedStyleNumber(fop18production * fop18quantity * enterpriseMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop19').innerHTML = 'You own: <b>' + fop19quantity + '</b> <br> Each time machine produces an additional <b>' + shortenedStyleNumber(fop19production) + '</b> GpC.<br> In total, your time machines produce an additional <b>' + shortenedStyleNumber(fop19production * fop19quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop19').innerHTML = 'You own: <b>' + fop19quantity + '</b> <br> Each time machine produces an additional <b>' + shortenedStyleNumber(fop19production * capitalMulti) + '</b> GpC.<br> In total, your time machines produce an additional <b>' + shortenedStyleNumber(fop19production * fop19quantity * capitalMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop20').innerHTML = 'You own: <b>' + fop20quantity + '</b> <br> Each js console produces an additional <b>' + shortenedStyleNumber(fop20production) + '</b> GpC.<br> In total, your js consoles produce an additional <b>' + shortenedStyleNumber(fop20production * fop20quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop20').innerHTML = 'You own: <b>' + fop20quantity + '</b> <br> Each js console produces an additional <b>' + shortenedStyleNumber(fop20production * capitalMulti) + '</b> GpC.<br> In total, your js consoles produce an additional <b>' + shortenedStyleNumber(fop20production * fop20quantity * capitalMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop21').innerHTML = 'You own: <b>' + fop21quantity + '</b> <br> Each galaxy produces an additional <b>' + shortenedStyleNumber(fop21production) + '</b> GpC.<br> In total, your galaxies produce an additional <b>' + shortenedStyleNumber(fop21production * fop21quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop21').innerHTML = 'You own: <b>' + fop21quantity + '</b> <br> Each galaxy produces an additional <b>' + shortenedStyleNumber(fop21production * landMulti) + '</b> GpC.<br> In total, your galaxies produce an additional <b>' + shortenedStyleNumber(fop21production * fop21quantity * landMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop22').innerHTML = 'You own: <b>' + fop22quantity + '</b> <br> Each alternate reality produces an additional <b>' + shortenedStyleNumber(fop22production) + '</b> GpC.<br> In total, your alternate realities produce an additional <b>' + shortenedStyleNumber(fop22production * fop22quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop22').innerHTML = 'You own: <b>' + fop22quantity + '</b> <br> Each alternate reality produces an additional <b>' + shortenedStyleNumber(fop22production * landMulti) + '</b> GpC.<br> In total, your alternate realities produce an additional <b>' + shortenedStyleNumber(fop22production * fop22quantity * landMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop23').innerHTML = 'You own: <b>' + fop23quantity + '</b> <br> Each multiverse produces an additional <b>' + shortenedStyleNumber(fop23production) + '</b> GpC.<br> In total, your multiverses produce an additional <b>' + shortenedStyleNumber(fop23production * fop23quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop23').innerHTML = 'You own: <b>' + fop23quantity + '</b> <br> Each multiverse produces an additional <b>' + shortenedStyleNumber(fop23production * landMulti) + '</b> GpC.<br> In total, your multiverses produce an additional <b>' + shortenedStyleNumber(fop23production * fop23quantity * landMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop24').innerHTML = 'You own: <b>' + fop24quantity + '</b> <br> Each AlgoMarbler produces an additional <b>' + shortenedStyleNumber(fop24production) + '</b> GpC.<br> In total, your AlgoMarblers produce an additional <b>' + shortenedStyleNumber(fop24production * fop24quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop24').innerHTML = 'You own: <b>' + fop24quantity + '</b> <br> Each AlgoMarbler produces an additional <b>' + shortenedStyleNumber(fop24production) + '</b> GpC.<br> In total, your AlgoMarblers produce an additional <b>' + shortenedStyleNumber(fop24production * fop24quantity * enterpriseMulti) + '</b> GpC.';
 
-            document.getElementById('display-stats-fop25').innerHTML = 'You own: <b>' + fop25quantity + '</b> <br> Every you produces an additional <b>' + shortenedStyleNumber(fop25production) + '</b> GpC.<br> In total, you produce an additional <b>' + shortenedStyleNumber(fop25production * fop25quantity) + '</b> GpC.';
+            document.getElementById('display-stats-fop25').innerHTML = 'You own: <b>' + fop25quantity + '</b> <br> Every you produces an additional <b>' + shortenedStyleNumber(fop25production) + '</b> GpC.<br> In total, you produce an additional <b>' + shortenedStyleNumber(fop25production * fop25quantity * enterpriseMulti) + '</b> GpC.';
 
         }
 
@@ -754,10 +763,10 @@
                 upgradeAmount--;
 
                 // Apply the upgrade
-                landMulti *= multiplier;
-                capitalMulti *= multiplier;
-                enterpriseMulti *= multiplier;
-                minerMulti *= multiplier;
+                landMulti = landMulti * multiplier;
+                capitalMulti = capitalMulti * multiplier;
+                enterpriseMulti = enterpriseMulti * multiplier;
+                minerMulti = minerMulti * multiplier;
 
                 // Update the display
                 updateData();
@@ -1623,7 +1632,9 @@
             <div id="gold-showing">0</div>
             <div id="gpc-showing">Per Click: 1</div>
         </div>
-        <button id="main-clicker" onClick="mainClick()"></button>
+        <div style="">
+            <button id="main-clicker" onClick="mainClick()"></button>
+        </div>
     </div>
     <div id="right-panel">
         <div style="height: 5vh; font-size: 3.5vh; text-align: center;">STATISTICS</div>
