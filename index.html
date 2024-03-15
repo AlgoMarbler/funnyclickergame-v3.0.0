@@ -272,6 +272,66 @@
         var lifetimeGold = 0;
         var gpc = 1;
         var upgrades1 = false;
+        var upgrades2 = false;
+        var upgrades3 = false;
+        var upgrades4 = false;
+        var upgrades5 = false;
+        var upgrades6 = false;
+        var upgrades7 = false;
+        var upgrades8 = false;
+        var upgrades9 = false;
+        var upgrades10 = false;
+        var upgrades11 = false;
+        var upgrades12 = false;
+        var upgrades13 = false;
+        var upgrades14 = false;
+        var upgrades15 = false;
+        var upgrades16 = false;
+        var upgrades17 = false;
+        var upgrades18 = false;
+        var upgrades19 = false;
+        var upgrades20 = false;
+        var upgrades21 = false;
+        var upgrades22 = false;
+        var upgrades23 = false;
+        var upgrades24 = false;
+        var upgrades25 = false;
+        var upgrades26 = false;
+        var upgrades27 = false;
+        var upgrades28 = false;
+        var upgrades29 = false;
+        var upgrades30 = false;
+        var upgrades31 = false;
+        var upgrades32 = false;
+        var upgrades33 = false;
+        var upgrades34 = false;
+        var upgrades35 = false;
+        var upgrades36 = false;
+        var upgrades37 = false;
+        var upgrades38 = false;
+        var upgrades39 = false;
+        var upgrades40 = false;
+        var upgrades41 = false;
+        var upgrades42 = false;
+        var upgrades43 = false;
+        var upgrades44 = false;
+        var upgrades45 = false;
+        var upgrades46 = false;
+        var upgrades47 = false;
+        var upgrades48 = false;
+        var upgrades49 = false;
+        var upgrades50 = false;
+        var upgrades51 = false;
+        var upgrades52 = false;
+        var upgrades53 = false;
+        var upgrades54 = false;
+        var upgrades55 = false;
+        var upgrades56 = false;
+        var upgrades57 = false;
+        var upgrades58 = false;
+        var upgrades59 = false;
+        var upgrades60 = false;
+
         var upgradeAmount = 0;
 
         var landMulti = 1;
@@ -279,6 +339,8 @@
         var enterpriseMulti = 1;
         var minerMulti = 1;
         var minerBonus = 1;
+
+        var defaultMultiCalc = 1;
 
         var fop1quantity = 0;
         var fop1cost = 100;
@@ -559,28 +621,51 @@
             document.getElementById('stats-board-lost-gold').innerHTML = 'Total Gold Lost: <b>' + styleNumber(lifetimeGold - gold) + '</b>';
 
             document.getElementById('stats-board-raw-gpc').innerHTML = 'Raw Gold Per Click: <b>' + styleNumber(fop1quantity * fop1defaultProduction + fop2quantity * fop2defaultProduction + fop3quantity * fop3defaultProduction + fop4quantity * fop4defaultProduction + fop5quantity * fop5defaultProduction + fop6quantity * fop6defaultProduction + fop7quantity * fop7defaultProduction + fop8quantity * fop8defaultProduction + fop9quantity * fop9defaultProduction + fop10quantity * fop10defaultProduction + fop11quantity * fop11defaultProduction + fop12quantity * fop12defaultProduction + fop13quantity * fop13defaultProduction + fop14quantity * fop14defaultProduction + fop15quantity * fop15defaultProduction + fop16quantity * fop16defaultProduction + fop17quantity * fop17defaultProduction + fop18quantity * fop18defaultProduction + fop19quantity * fop19defaultProduction + fop20quantity * fop20defaultProduction + fop21quantity * fop21defaultProduction + fop22quantity * fop22defaultProduction + fop23quantity * fop23defaultProduction + fop24quantity * fop24defaultProduction + fop25quantity * fop25defaultProduction) + '</b>';
-            document.getElementById('stats-board-gpc-multi').innerHTML = 'Gold Per Click Multiplier: <b>' + styleNumber((gpc-1)/(fop1quantity * fop1defaultProduction + fop2quantity * fop2defaultProduction + fop3quantity * fop3defaultProduction + fop4quantity * fop4defaultProduction + fop5quantity * fop5defaultProduction + fop6quantity * fop6defaultProduction + fop7quantity * fop7defaultProduction + fop8quantity * fop8defaultProduction + fop9quantity * fop9defaultProduction + fop10quantity * fop10defaultProduction + fop11quantity * fop11defaultProduction + fop12quantity * fop12defaultProduction + fop13quantity * fop13defaultProduction + fop14quantity * fop14defaultProduction + fop15quantity * fop15defaultProduction + fop16quantity * fop16defaultProduction + fop17quantity * fop17defaultProduction + fop18quantity * fop18defaultProduction + fop19quantity * fop19defaultProduction + fop20quantity * fop20defaultProduction + fop21quantity * fop21defaultProduction + fop22quantity * fop22defaultProduction + fop23quantity * fop23defaultProduction + fop24quantity * fop24defaultProduction + fop25quantity * fop25defaultProduction)*100) + '%</b>';
-            document.getElementById('stats-board-total-fops').innerHTML = 'Total Factors of Production: <b>' + styleNumber(fop1quantity + fop2quantity + fop3quantity + fop4quantity + fop5quantity +fop6quantity + fop7quantity + fop8quantity + fop9quantity + fop10quantity +fop11quantity + fop12quantity + fop13quantity + fop14quantity + fop15quantity +fop16quantity + fop17quantity + fop18quantity + fop19quantity + fop20quantity + fop21quantity + fop22quantity + fop23quantity + fop24quantity + fop25quantity) + '</b>'
+            document.getElementById('stats-board-gpc-multi').innerHTML = 'Gold Per Click Multiplier: <b>' + ((gpc-1)/(defaultMultiCalc)).toFixed(2) + 'x</b>';
+            document.getElementById('stats-board-total-fops').innerHTML = 'Total Factors of Production: <b>' + styleNumber(fop1quantity + fop2quantity + fop3quantity + fop4quantity + fop5quantity +fop6quantity + fop7quantity + fop8quantity + fop9quantity + fop10quantity +fop11quantity + fop12quantity + fop13quantity + fop14quantity + fop15quantity +fop16quantity + fop17quantity + fop18quantity + fop19quantity + fop20quantity + fop21quantity + fop22quantity + fop23quantity + fop24quantity + fop25quantity) + '</b>';
+
+            document.getElementById('stats-board-land-multi').innerHTML = 'Land FoP Multiplier: <b>' + landMulti.toFixed(2) + 'x</b>';
+
+            document.getElementById('stats-board-capital-multi').innerHTML = 'Capital FoP Multiplier: <b>' + capitalMulti.toFixed(2) + 'x</b>';
+
+            document.getElementById('stats-board-enterprise-multi').innerHTML = 'Enterprise FoP Multiplier: <b>' + enterpriseMulti.toFixed(2) + 'x</b>';
  
 
         }
 
         function checkForUpgrades() {
-            if (lifetimeGold >= 3 && !upgrades1) {
+            if (lifetimeGold >= 1e5 && !upgrades1) {
                 document.getElementById("upgrade-panel").innerHTML +=
                     '<div id="upgradenumberindex1" style="height: 9vh;">' +
                         '<div style="font-size: 2.5vh; height: 3vh; text-align: left; padding-left: 1.5vw; width: 23.5vw; background-image: url(\'upgrade-typical.png\'); background-size: cover; background-repeat: no-repeat; border-radius: 1vh 1vh 0 0;"><b>Clicky Boosty I </b></div>' +
                         '<div style="height: 6vh; background-color: #999999; border-radius: 0 0 1vh 1vh;">' +
                             '<div style="height: 3vh; padding-left: 1vw; font-size: 1.5vh;">Gold per click +5%</div>' +
                             '<div style="height: 3vh; text-align: center;">' +
-                                '<button onClick="upgradeTypical(3, 1.05, 1)" style="width: 23.5vw; font-size: 1.5vh; height: 2.5vh; border: 0px; border-radius: 0.5vh;">Buy (3 gold)</button>' +
+                                '<button onClick="upgradeTypical(1e5, 1.05, 1)" style="width: 23.5vw; font-size: 1.5vh; height: 2.5vh; border: 0px; border-radius: 0.5vh;">Buy (100000 gold)</button>' +
                             '</div>' +
                         '</div>' + 
-                    '</div><div style="border-radius: 0px; height: 1.5vh; width: 0vw;"></div>';
+                    '</div><div style="height: 1.5vh;"></div><div style="border-radius: 0px; height: 0vh; width: 0vw;" id="end-upgrade1"></div>';
                 upgradeAmount++;
                 upgrades1 = true;
             };
-        }
+
+            if (lifetimeGold >= 1e6 && !upgrades2) {
+                document.getElementById("upgrade-panel").innerHTML +=
+                    '<div id="upgradenumberindex2" style="height: 9vh;">' +
+                        '<div style="font-size: 2.5vh; height: 3vh; text-align: left; padding-left: 1.5vw; width: 23.5vw; background-image: url(\'upgrade-typical.png\'); background-size: cover; background-repeat: no-repeat; border-radius: 1vh 1vh 0 0;"><b>Clicky Boosty II </b></div>' +
+                        '<div style="height: 6vh; background-color: #999999; border-radius: 0 0 1vh 1vh;">' +
+                            '<div style="height: 3vh; padding-left: 1vw; font-size: 1.5vh;">Gold per click +5%</div>' +
+                            '<div style="height: 3vh; text-align: center;">' +
+                                '<button onClick="upgradeTypical(1e6, 1.05, 2)" style="width: 23.5vw; font-size: 1.5vh; height: 2.5vh; border: 0px; border-radius: 0.5vh;">Buy (1 million gold)</button>' +
+                            '</div>' +
+                        '</div>' + 
+                    '</div><div style="height: 1.5vh;"><div style="border-radius: 0px; height: 1.5vh; width: 0vw;" id="end-upgrade2"></div>';
+                upgradeAmount++;
+                upgrades2 = true;
+            };
+
+
+        };
 
         function updateUpgradeAmount() {
             document.getElementById('upgradeAmount').innerHTML = "UPGRADES (" + upgradeAmount + " available)"
@@ -588,6 +673,8 @@
 
         function updateIncrement() {
             gpc = 1 + fop1quantity * fop1production * minerMulti + fop2quantity * fop2production * capitalMulti * minerBonus + fop3quantity * fop3production * landMulti * minerBonus + fop4quantity * fop4production * capitalMulti  * minerBonus + fop5quantity * fop5production * capitalMulti * minerBonus + fop6quantity * fop6production * enterpriseMulti * minerBonus + fop7quantity * fop7production * capitalMulti * minerBonus + fop8quantity * fop8production * landMulti * minerBonus + fop9quantity * fop9production * enterpriseMulti * minerBonus + fop10quantity * fop10production * landMulti * minerBonus + fop11quantity * fop11production * landMulti * minerBonus + fop12quantity * fop12production * capitalMulti * minerBonus + fop13quantity * fop13production * landMulti * minerBonus + fop14quantity * fop14production * capitalMulti * minerBonus + fop15quantity * fop15production * enterpriseMulti * minerBonus + fop16quantity * fop16production * capitalMulti * minerBonus + fop17quantity * fop17production * landMulti * minerBonus + fop18quantity * fop18production* enterpriseMulti * minerBonus + fop19quantity * fop19production * capitalMulti * minerBonus + fop20quantity * fop20production * capitalMulti * minerBonus + fop21quantity * fop21production * landMulti * minerBonus + fop22quantity * fop22production * landMulti * minerBonus + fop23quantity * fop23production * capitalMulti * minerBonus + fop24quantity * fop24production * enterpriseMulti * minerBonus + fop25quantity * fop25production * enterpriseMulti * minerBonus;
+
+            defaultMultiCalc = fop1quantity * fop1defaultProduction + fop2quantity * fop2defaultProduction + fop3quantity * fop3defaultProduction + fop4quantity * fop4defaultProduction + fop5quantity * fop5defaultProduction + fop6quantity * fop6defaultProduction + fop7quantity * fop7defaultProduction + fop8quantity * fop8defaultProduction + fop9quantity * fop9defaultProduction + fop10quantity * fop10defaultProduction + fop11quantity * fop11defaultProduction + fop12quantity * fop12defaultProduction + fop13quantity * fop13defaultProduction + fop14quantity * fop14defaultProduction + fop15quantity * fop15defaultProduction + fop16quantity * fop16defaultProduction + fop17quantity * fop17defaultProduction + fop18quantity * fop18defaultProduction + fop19quantity * fop19defaultProduction + fop20quantity * fop20defaultProduction + fop21quantity * fop21defaultProduction + fop22quantity * fop22defaultProduction + fop23quantity * fop23defaultProduction + fop24quantity * fop24defaultProduction + fop25quantity * fop25defaultProduction;
         }
 
         function updateData() {
@@ -776,8 +863,8 @@
                 var upgradeContent = upgradePanel.innerHTML;
 
                 // Find the starting and ending indices of the upgrade to be removed
-                var start = upgradeContent.indexOf('<div id="upgradenumberindex'+ indexupgrade + '" style="height: 9vh;">');
-                var end = upgradeContent.indexOf('</div><div style="border-radius: 0px; height: 1.5vh; width: 0vw;"></div>');
+                var start = upgradeContent.indexOf('<div id="upgradenumberindex'+ indexupgrade);
+                var end = upgradeContent.indexOf('<div style="border-radius: 0px; height: 0vh; width: 0vw;" id="end-upgrade' + indexupgrade + '"></div>');
 
                 // Check if the starting and ending indices are valid before removing
                 if (start !== -1 && end !== -1) {
@@ -1623,6 +1710,9 @@
             <br>
             <div id="stats-board-raw-gpc"></div>
             <div id="stats-board-gpc-multi"></div>
+            <div id="stats-board-land-multi">hi?</div>
+            <div id="stats-board-capital-multi">1</div>
+            <div id="stats-board-enterprise-multi">2</div>
             <br>
             <div id="stats-board-total-fops"></div>
         </div>
@@ -1637,15 +1727,7 @@
         </div>
     </div>
     <div id="right-panel">
-        <div style="height: 5vh; font-size: 3.5vh; text-align: center;">STATISTICS</div>
-        <div id="stats-board-current-gold"></div>
-        <div id="stats-board-lifetime-gold"></div>
-        <div id="stats-board-lost-gold"></div>
-        <br>
-        <div id="stats-board-raw-gpc"></div>
-        <div id="stats-board-gpc-multi"></div>
-        <br>
-        <div id="stats-board-total-fops"></div>
+
     </div>
     <div id="floor-panel">egg</div>
 </body>
